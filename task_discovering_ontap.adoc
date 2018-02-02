@@ -12,7 +12,7 @@ keywords: ontap, cluster, discover, manage, provision, provisioning, volumes, ad
 :linkattrs:
 :imagesdir: ./media/
 
-Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering these clusters enables you to easily replicate data across your hybrid cloud environment directly from Cloud Manager.
+Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage [Should we link to the NPS page on netapp.com from here?] configuration, and in the IBM Cloud. Discovering these clusters enables you to easily replicate data across your hybrid cloud environment directly from Cloud Manager.
 
 toc::[]
 
