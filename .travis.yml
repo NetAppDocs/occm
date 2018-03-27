@@ -18,5 +18,7 @@ before_install:
 - rm -rf dependencies
 - mv sidebar.yml _data/sidebars/
 - sed -i 's/\/jekyll/'$JEKYLL_BASEURL'/g' ./_config.yml
+- echo "nss_product: $NSS_PRODUCT" >> ./_config.yml
 script:
-- bundle exec rake deploy
+- grep nss_product ./_config.yml
+#- bundle exec rake deploy
