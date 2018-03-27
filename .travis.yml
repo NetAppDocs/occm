@@ -18,8 +18,6 @@ before_install:
 - rm -rf dependencies
 - mv sidebar.yml _data/sidebars/
 - sed -i 's/\/jekyll/'$JEKYLL_BASEURL'/g' ./_config.yml
-#- echo "nss_product{{':'}} OnCommand Cloud Manager" >> ./_config.yml
 - sed -i -e "\$anss_product\:\ OnCommand Cloud Manager" ./_config.yml
 script:
-- grep nss_product ./_config.yml
-#- bundle exec rake deploy
+- bundle exec rake deploy
