@@ -41,7 +41,7 @@ Cloud Manager requires outbound internet access to contact the following endpoin
 \https://login.microsoftonline.com
 | Enables Cloud Manager to deploy and manage ONTAP Cloud systems in the Azure US Gov regions.
 
-| us-east-1.amazonaws.com	| Provides access to software images in Amazon S3 for upgrades.
+| s3.us-east-1.amazonaws.com	| Provides access to software images in Amazon S3 for upgrades.
 
 |
 cognito-idp.us-east-1.amazonaws.com
