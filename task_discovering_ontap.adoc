@@ -13,7 +13,7 @@ summary: Cloud Manager can discover the ONTAP clusters in your on-premises envir
 :linkattrs:
 :imagesdir: ./media/
 
-Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering these clusters enables you to easily replicate data across your hybrid cloud environment directly from Cloud Manager.
+Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a https://www.netapp.com/us/products/cloud-storage/private-storage-cloud.aspx[NetApp Private Storage^] configuration, and in the IBM Cloud. Discovering these clusters enables you to easily replicate data across your hybrid cloud environment directly from Cloud Manager.
 
 toc::[]
 
