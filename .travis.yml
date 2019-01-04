@@ -3,33 +3,12 @@ dist: trusty
 group: deprecated-2017Q4 # To fix NPM timeout errors
 language: ruby
 rvm:
-- 2.3
-jobs:
-  include:
-    - if: branch = master OR repo =~ /-stage/
+- 2.4.3
+if: branch = master OR repo =~ /-stage/
 before_install:
-- echo -e "machine github.com\n login $CI_USER_TOKEN" >> ~/.netrc
+- echo -e "machine github.com\n login $GH_TOKEN" >> ~/.netrc
 - git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
-- rm -rf dependencies/jekyll/.git/
-- rm -rf dependencies/jekyll/*.md
-- mv dependencies/jekyll/* .
-- rm -rf dependencies
-- mv sidebar.yml _data/sidebars/
-- sed -i 's/\/jekyll/\/'$REPO_NAME'/g' ./_config.yml
-- sed -i -e "\$anss_product\:\ OnCommand Cloud Manager" ./_config.yml
-- if [[ "$TRAVIS_REPO_SLUG" =~ -stage ]]; then
-  sed -i 's/^.*searchyll.*//g' ./Gemfile &&
-  sed -i 's/^.*searchyll.*//g' ./_config.yml;
-  fi
-- ES_INDEX="clouddocs-"$REPO_NAME"-prod"
-- SK_INDEXES=$ES_INDEX
-- ES_INDEX_URL="https\:\/\/"$ES_AUTH"\@"$ES_API
-- SK_ES_URL="https\:\/\/"$ES_API$SK_INDEXES
-- sed -i 's/url\:\s*\"localhost\:9200\"/url\:\ \"'$ES_INDEX_URL'\"/g' ./_config.yml
-- sed -i 's/index\_name\:\s*.*/index\_name\:\ \"'$ES_INDEX'\"/g' ./_config.yml
-- sed -i 's/REPO\_URL/'$REPO_NAME'/g' ./webpack/components/Search.js
-- sed -i 's/ES\_AUTH/\"'$ES_AUTH'\"/g' ./webpack/components/Search.js
-- sed -i 's/SK\_ES\_URL/\"'$SK_ES_URL'\"/g' ./webpack/components/Search.js
-- npm install --loglevel verbose && node_modules/.bin/webpack -p --progress --colors
+- gem update --system && gem install bundler && gem update bundler
+- mv dependencies/jekyll/prod-build.sh ./ && ./prod-build.sh
 script:
 - bundle exec rake deploy
