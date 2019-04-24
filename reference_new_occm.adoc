@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_new_occm.html
-keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements
+keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes
 summary: OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
 ---
 
