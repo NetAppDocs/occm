@@ -9,7 +9,7 @@ before_install:
 - echo -e "machine github.com\n login $GH_TOKEN" > ~/.netrc && chmod 600 ~/.netrc
 - git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
 - gem update --system && gem install bundler && gem update bundler
+- mv -f dependencies/jekyll/_config.occm.yml dependencies/jekyll/_config.yml;
 - mv dependencies/jekyll/prod-build.sh ./ && ./prod-build.sh
-- sed -i 's/languages\:\s*.*/languages\:\ \[\"us-en\"\,\"en\"\]/g' ./_config.yml
 script:
 - bundle exec rake deploy
