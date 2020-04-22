@@ -25,7 +25,7 @@ Cloud Manager needs permissions to perform actions in Azure. You can grant the r
 
 The following image depicts how Cloud Manager obtains permissions to perform operations in Azure. A service principal object, which is tied to one or more Azure subscriptions, represents Cloud Manager in Azure Active Directory and is assigned to a custom role that allows the required permissions.
 
-image:diagram_azure_authentication.png[Conceptual image that shows Cloud Manager obtaining authentication and authorization from Azure Active Directory before it can make an API call. In Active Directory, the Cloud Manager Operator role defines permissions. It is tied to one or more Azure subscriptions and a service principal object that represents the Cloud Manger application.]
+image:diagram_azure_authentication.png["Conceptual image that shows Cloud Manager obtaining authentication and authorization from Azure Active Directory before it can make an API call. In Active Directory, the Cloud Manager Operator role defines permissions. It is tied to one or more Azure subscriptions and a service principal object that represents the Cloud Manger application."]
 
 .Steps
 

@@ -71,7 +71,7 @@ The following video shows how to associate a pay-as-you-go Marketplace subscript
 video::video_subscribing_aws.mp4[width=848, height=480]
 +
 TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS Marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, click the *click here* link to go to Cloud Central and complete the process.
-image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]
+image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not."]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +

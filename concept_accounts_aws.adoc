@@ -21,7 +21,7 @@ When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS 
 
 When Cloud Central launches the Cloud Manager instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that AWS account. link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[Review how Cloud Manager uses the permissions].
 
-image:diagram_permissions_initial_aws.png[A conceptual image that shows Cloud Central deploying Cloud Manager in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the Cloud Manager instance.]
+image:diagram_permissions_initial_aws.png["A conceptual image that shows Cloud Central deploying Cloud Manager in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the Cloud Manager instance."]
 
 Cloud Manager selects this cloud provider account by default when you create a new working environment:
 
@@ -31,7 +31,7 @@ image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Acco
 
 If you want to launch Cloud Volumes ONTAP in different AWS accounts, then you can either link:task_adding_aws_accounts.html[provide AWS keys for an IAM user or the ARN of a role in a trusted account]. The following image shows two additional accounts, one providing permissions through an IAM role in a trusted account and another through the AWS keys of an IAM user:
 
-image:diagram_permissions_multiple_aws.png[A conceptual image that shows two additional accounts. Each has an IAM policy, one is attached to IAM user and the other is attached to an IAM role.]
+image:diagram_permissions_multiple_aws.png["A conceptual image that shows two additional accounts. Each has an IAM policy, one is attached to IAM user and the other is attached to an IAM role."]
 
 You would then link:task_adding_aws_accounts.html#adding-aws-accounts-to-cloud-manager[add the account credentials to Cloud Manager] by specifying the Amazon Resource Name (ARN) of the IAM role, or the AWS keys for the IAM user.
 

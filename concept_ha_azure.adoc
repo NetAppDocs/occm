@@ -19,7 +19,7 @@ A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliabilit
 
 A Cloud Volumes ONTAP HA configuration in Azure includes the following components:
 
-image:diagram_ha_azure.png[A conceptual image that shows a load balancer managing incoming traffic from Cloud Manager and clients, two Cloud Volumes ONTAP nodes in an Availability Set, SSD disks for boot data, and Page Blobs for customer data.]
+image:diagram_ha_azure.png["A conceptual image that shows a load balancer managing incoming traffic from Cloud Manager and clients, two Cloud Volumes ONTAP nodes in an Availability Set, SSD disks for boot data, and Page Blobs for customer data."]
 
 Note the following about the Azure components that Cloud Manager deploys for you:
 

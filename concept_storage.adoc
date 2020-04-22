@@ -21,7 +21,7 @@ IMPORTANT: All disks and aggregates must be created and deleted directly from Cl
 
 Cloud Volumes ONTAP uses cloud provider storage as disks and groups them into one or more aggregates. Aggregates provide storage to one or more volumes.
 
-image:diagram_storage.png[This illustration shows an aggregate that is comprised of disks, and the data volumes that Cloud Volumes ONTAP makes available to hosts.]
+image:diagram_storage.png["This illustration shows an aggregate that is comprised of disks, and the data volumes that Cloud Volumes ONTAP makes available to hosts."]
 
 Several types of cloud disks are supported. You choose the disk type when you create a volume and the default disk size when you deploy Cloud Volumes ONTAP.
 
