@@ -19,7 +19,7 @@ before_install:
 - sudo apt-get -y install graphicsmagick graphicsmagick-libmagick-dev-compat libmagickwand-dev
 script:
 - if [[ ! -z "$FEATURE_FLAG" ]]; then bundle exec rake buildAll; fi
-- mkdir -p /tmp/output && bundle exec jekyll build --destination /tmp/output
+- mkdir -p /tmp/output && bundle exec jekyll build --trace --destination /tmp/output
 deploy:
   provider: pages
   skip_cleanup: true
