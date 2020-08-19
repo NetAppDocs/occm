@@ -20,6 +20,7 @@ before_install:
 script:
 - if [[ ! -z "$FEATURE_FLAG" ]]; then bundle exec rake buildAll; fi
 - mkdir -p /tmp/output && bundle exec jekyll build --trace --destination /tmp/output
+- touch /tmp/output/.nojekyll
 deploy:
   provider: pages
   skip_cleanup: true
