@@ -29,7 +29,7 @@ The mediator runs the Linux operating system on a f1-micro instance and uses two
 +
 The configuration uses four VPCs because GCP requires that each network interface resides in a separate VPC network.
 
-* Four Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair.
+* Eight Google Cloud internal load balancers (Four TCP & Four UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 link:reference_networking_gcp.html[Learn about networking requirements].
 
