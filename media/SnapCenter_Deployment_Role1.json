@@ -1,0 +1,29 @@
+{
+    "properties": {
+        "roleName": "SnapCenter_Deployment_Role_1",
+        "description": "Role for SnapCenter Cluster deployment to be assigned at the scope of connector resource group",
+        "assignableScopes": [
+            "/subscriptions/<Subscription_ID>"
+        ],
+        "permissions": [
+            {
+                "actions": [
+					"Microsoft.ManagedIdentity/userAssignedIdentities/read",
+					"Microsoft.ManagedIdentity/userAssignedIdentities/write",
+					"Microsoft.ManagedIdentity/userAssignedIdentities/delete",
+					"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
+					"Microsoft.Authorization/roleDefinitions/write",
+					"Microsoft.Authorization/roleDefinitions/delete",
+					"Microsoft.Authorization/roleAssignments/read",
+					"Microsoft.Authorization/roleAssignments/write",
+					"Microsoft.Authorization/roleAssignments/delete",
+					"Microsoft.Compute/virtualMachines/read",
+					"Microsoft.Compute/virtualMachines/write"     
+                ],
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}

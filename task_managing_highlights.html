@@ -1,0 +1,3473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="at-element-marker">
+  <title>Managing your private data | NetApp Cloud Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Managing your private data | NetApp Cloud Docs" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/occm/task_managing_highlights.html" />
+	<meta property="og:description" content="Cloud Data Sense provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to yo..." />
+  <meta property="og:image" content="https://docs.netapp.com/us-en/occm/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta http-equiv="nss-product" content="OnCommand"/>
+  
+  <meta name="description" content="Cloud Data Sense provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to yo...">
+  <meta name="keywords" content=" compliance, privacy, filter data, highlights, policies, email alerts, notifications, aip labels, azure information protection, add labels, change labels, data sense">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/us-en/occm/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/us-en/occm/feed.xml">
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/us-en/occm/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/us-en/occm/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/us-en/occm/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/us-en/occm/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/us-en/occm/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/us-en/occm/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/us-en/occm/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/us-en/occm/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/us-en/occm/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/us-en/occm/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/occm/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/occm/css/na-pagenav.css' type='text/css'>
+
+  
+
+  
+  <link rel='stylesheet' href='/us-en/occm/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/us-en/occm/js/na-search.js'></script>
+  
+
+  
+  <script src='/us-en/occm/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/us-en/occm/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/occm/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/us-en/occm/js/na-utility.js'></script>
+  <script src='/us-en/occm/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/us-en/occm/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/us-en/occm/js/toc.js'></script>
+  <script src='/us-en/occm/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Product and Solutions</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support and Training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/us-en/occm/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/us-en/occm/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/us-en/occm/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" data-type="widget" data-placeholder="Search Documentation" data-no-results-found="No results were found for {query}" data-did-you-mean="Search for {suggestion}." data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" data-results-found="{hitCount} results found"  ></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar"><!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">English</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/occm" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/occm" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li></ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: English
+            </p>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+        <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">Home</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">Documentation</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Cloud Docs</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/us-en/occm/">Cloud&nbsp;Manager</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          Managing your private data
+        </li>
+      </ul>
+    </div>
+
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">PDFs<span>
+    </span>
+  </a>
+</div>
+<ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><div class="n-pdf-section">
+      <span class="n-pdf-section-title">Site</span>
+    </div>
+    <li>
+      <a target="_blank" href="/us-en/occm/pdfs/fullsite-sidebar/Cloud_Manager_documentation.pdf" >
+        <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+        Cloud Manager documentation
+      </a>
+    </li>
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Release_notes.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Release notes
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Cloud_Manager.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Cloud Manager
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started_with_Cloud_Manager.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started with Cloud Manager
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Set_up_a_Cloud_Central_account.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Set up a Cloud Central account
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Set_up_a_Connector.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Set up a Connector
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_Cloud_Volumes_ONTAP.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage Cloud Volumes ONTAP
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Learn.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Learn
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Storage.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Storage
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/High_availability_pairs.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            High-availability pairs
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started_in_AWS.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started in AWS
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Set_up_your_networking.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Set up your networking
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started_in_Azure.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started in Azure
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started_in_GCP.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started in GCP
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Provision_and_manage_storage.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Provision and manage storage
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_storage_VMs.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage storage VMs
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Replicate_data.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Replicate data
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Monitor_performance.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Monitor performance
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Administer.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Administer
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Provision_volumes_using_a_file_service.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Provision volumes using a file service
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Azure_NetApp_Files.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Azure NetApp Files
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Cloud_Volumes_Service_for_AWS.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Cloud Volumes Service for AWS
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Reference.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Reference
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Cloud_Volumes_Service_for_GCP.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Cloud Volumes Service for GCP
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_ONTAP_clusters.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage ONTAP clusters
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Use_templates_to_standardize_resource_creation.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Use templates to standardize resource creation
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Back_up_data_to_the_cloud.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Back up data to the cloud
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Cross_account_and_cross_region_configurations.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Cross-account and cross-region configurations
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Copy_and_synchronize_data.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Copy and synchronize data
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/How_to_install_a_data_broker.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            How to install a data broker
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Tutorials.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Tutorials
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Gain_insight_into_data_privacy.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Gain insight into data privacy
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Activate_scanning_on_your_data_sources.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Activate scanning on your data sources
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+    <div class="n-pdf-section">
+  <span class="n-pdf-section-title">This page</span>
+</div>
+
+<li class="active">
+  <a target="_blank" href="/us-en/occm/pdfs/pages/task_managing_highlights.pdf" >
+    <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+    Managing your private data
+  </a>
+</li>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Organize_your_resources_using_tags.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Organize your resources using tags
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Enable_real_time_global_file_sharing.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Enable real-time global file sharing
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Optimize_cloud_compute_costs.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Optimize cloud compute costs
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Tier_on_premises_data_to_the_cloud.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Tier on-premises data to the cloud
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Reference.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Reference
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Administer_Cloud_Manager.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Administer Cloud Manager
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_Connectors.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage Connectors
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/More_ways_to_create_Connectors.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            More ways to create Connectors
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_cloud_provider_credentials.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage cloud provider credentials
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/AWS.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            AWS
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Azure.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Azure
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/GCP.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            GCP
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Reference.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Reference
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Automate_with_the_API_and_IaC_tools.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Automate with the API and IaC tools
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+<script>
+  $("#toggleContainerPdf li.active").parents('li').toggle('display');
+  $("#toggleContainerPdf li.active").parents('span.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+  });
+</script><ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="index.html">
+        Cloud Manager 3.9 docs
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Release notes</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Manager</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_occm.html">
+        What's new
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_saas.html">
+        Transition to SaaS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_issues.html">
+        Known issues
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations.html">
+        Known limitations
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-volumes-ontap/">
+        Cloud Volumes ONTAP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_key_changes.html">
+        Important changes
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Cloud Manager</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_overview.html">
+        Learn about Cloud Manager
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_checklist_cm.html">
+        Getting started checklist
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_signing_up.html">
+        Sign up to Cloud Central
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_logging_in.html">
+        Log in to Cloud Manager
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up a Cloud Central account</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cloud_central_accounts.html">
+        Learn about Cloud Central accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_cloud_central_accounts.html">
+        Set up an account
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up a Connector</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_connectors.html">
+        Learn about Connectors
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_networking_cloud_manager.html">
+        Networking requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_creating_connectors_aws.html">
+        Create a Connector in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_creating_connectors_azure.html">
+        Create a Connector in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_creating_connectors_gcp.html">
+        Create a Connector in GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_whats_next.html">
+        Where to go next
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage Cloud Volumes ONTAP</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Learn</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_overview_cvo.html">
+        Overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Storage</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_storage.html">
+        Disks and aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_data_tiering.html">
+        Data tiering
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_storage_management.html">
+        Storage management
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_write_speed.html">
+        Write speed
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_flash_cache.html">
+        Flash Cache
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_worm.html">
+        WORM storage
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> High-availability pairs</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_ha.html">
+        HA pairs in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_ha_azure.html">
+        HA pairs in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_ha_google_cloud.html">
+        HA pairs in GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="concept_licensing.html">
+        Licensing
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_license_management.html">
+        Management of node-based BYOL
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_evaluating.html">
+        Evaluating
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_security.html">
+        Security
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_performance.html">
+        Performance
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html">
+        Supported configurations
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://cloud.netapp.com/cloud-volumes-global-regions">
+        Supported regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_active_iq.html">
+        AutoSupport and Active IQ Digital Advisor
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_default_configs.html">
+        Default configuration
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started in AWS</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_getting_started_aws.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_planning_your_config.html">
+        Plan your configuration
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up your networking</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_networking_aws.html">
+        Networking requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_transit_gateway.html">
+        Set up an AWS transit gateway
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_security_groups.html">
+        Security group rules for AWS
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_kms.html">
+        Set up the AWS KMS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deploying_otc_aws.html">
+        Launch a system in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_getting_started_aws_c2s.html">
+        Get started in AWS C2S
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started in Azure</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_getting_started_azure.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_planning_your_config_azure.html">
+        Plan your configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_networking_azure.html">
+        Set up your networking
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deploying_otc_azure.html">
+        Launch a system in Azure
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started in GCP</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_getting_started_gcp.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_planning_your_config_gcp.html">
+        Plan your configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_networking_gcp.html">
+        Set up your networking
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_creating_gcp_service_account.html">
+        Create a service account
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_gcp_encryption.html">
+        Use customer-managed encryption keys
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deploying_gcp.html">
+        Launch a system in GCP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Provision and manage storage</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_provisioning_storage.html">
+        Create volumes, aggregates, and LUNs
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_storage.html">
+        Manage volumes and aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering.html">
+        Tier inactive data to object storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_connecting_kubernetes.html">
+        Use ONTAP as persistent storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_encrypting_volumes.html">
+        Encrypt volumes with NetApp encryption
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage storage VMs</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_managing_svms.html">
+        Work with storage VMs in Cloud Manager
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_svms_aws.html">
+        Create storage VMs in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_svms_azure.html">
+        Create storage VMs in Azure
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Replicate data</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_replication.html">
+        Learn about Replication
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_replicating_data.html">
+        Get started
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_replication.html">
+        Manage schedules and relationships
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_replication_policies.html">
+        Learn about replication policies
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Monitor performance</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_monitoring.html">
+        Learn about Monitoring
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_getting_started_monitoring.html">
+        Get started
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_protecting_ransomware.html">
+        Improve ransomware protection
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Administer</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_managing_licenses.html">
+        Manage licenses
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_registering.html">
+        Register pay-as-you-go systems
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_ontap_cloud.html">
+        Set up Cloud Volumes ONTAP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_updating_ontap_cloud.html">
+        Update software
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_modifying_ontap_cloud.html">
+        Modify system configurations
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_state.html">
+        Stop and start systems
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_monitoring_costs.html">
+        Monitor AWS costs
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_connecting_to_otc.html">
+        Connect to Cloud Volumes ONTAP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_adding_ontap_cloud.html">
+        Add existing systems
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_overriding_cifs_locks.html">
+        Override CIFS locks in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_enabling_private_link.html">
+        Use an Azure Private Link
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deleting_working_env.html">
+        Delete systems
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Provision volumes using a file service</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure NetApp Files</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_azure_netapp_files.html">
+        Learn about Azure NetApp Files
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_anf.html">
+        Set up Azure NetApp Files
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_anf_volumes.html">
+        Create and manage volumes
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Volumes Service for AWS</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cvs_aws.html">
+        Learn about Cloud Volumes Service for AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_cvs_aws.html">
+        Deploy and manage cloud volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_cloud_volumes_snapshots.html">
+        Manage cloud volumes snapshots
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_cvs_service_levels_and_quotas.html">
+        Service levels and allocated capacity
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_security_groups_windows_ad_servers.html">
+        AWS security group settings for Windows AD servers
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Volumes Service for GCP</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cvs_gcp.html">
+        Learn about Cloud Volumes Service for GCP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setup_cvs_gcp.html">
+        Set up Cloud Volumes Service for GCP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_cvs_gcp.html">
+        Create and manage cloud volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_cloud_volumes_gcp_snapshots.html">
+        Manage cloud volumes snapshots
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage ONTAP clusters</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_discovering_ontap.html">
+        Discover ONTAP clusters
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_ontap.html">
+        Manage clusters using Active IQ
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_provisioning_ontap.html">
+        Manage ONTAP volumes
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Use templates to standardize resource creation</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_resource_templates.html">
+        Learn about Application Templates
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_define_templates.html">
+        Build templates for your organization
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_check_template_compliance.html">
+        Check resources for template compliance
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_run_templates.html">
+        Run templates to create resources
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Back up data to the cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_backup_to_cloud.html">
+        Learn about Cloud Backup
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_backup_to_s3.html">
+        Back up Cloud Volumes ONTAP data to Amazon S3
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_backup_to_azure.html">
+        Back up Cloud Volumes ONTAP data to Azure Blob
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_backup_to_gcp.html">
+        Back up Cloud Volumes ONTAP data to Google Cloud
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_backup_from_onprem.html">
+        Back up on-premises ONTAP data to public cloud
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_backup_onprem_private_cloud.html">
+        Back up on-premises ONTAP data to private cloud
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_managing_backups.html">
+        Manage backups
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_restore_backups.html">
+        Restore from backups
+      </a></li><li class="subfolders "><a href="reference_cross_account.html">
+        <div class="na-navbar-padding"> Cross-account and cross-region configurations</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_backup_multi_account_aws.html">
+        Configure Backup for multi-account access in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_backup_multi_account_azure.html">
+        Configure Backup for multi-account access in Azure
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Copy and synchronize data</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cloud_sync.html">
+        Learn about Cloud Sync
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_sync_quick_start.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_sync_requirements.html">
+        Prepare the source and target
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_sync_networking.html">
+        Prepare networking
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> How to install a data broker</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_sync_installing_aws.html">
+        Install in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_installing_azure.html">
+        Install in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_installing_gcp.html">
+        Install in GCP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_installing_linux.html">
+        Install on a Linux host
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_sync_creating_relationships.html">
+        Create a sync relationship
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_licensing.html">
+        Pay for sync relationships
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Tutorials</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_sync_copying_acls.html">
+        Copy ACLs between shares
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_nfs_encryption.html">
+        Encrypt NFS data in flight
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_external_vault.html">
+        Use secrets from HashiCorp Vault
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_sync_managing_relationships.html">
+        Manage sync relationships
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_managing_data_brokers.html">
+        Manage data brokers
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_managing_reports.html">
+        View reports to tune your configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_uninstalling.html">
+        Uninstall the data broker
+      </a></li><li class=" "><a class="na-navbar-padding" href="api_sync.html">
+        API
+      </a></li><li class=" "><a class="na-navbar-padding" href="faq_sync.html">
+        FAQ
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Gain insight into data privacy</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cloud_compliance.html">
+        Learn about Cloud Data Sense
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_deploy_cloud_compliance.html">
+        Deploy Cloud Data Sense
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Activate scanning on your data sources</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_getting_started_compliance.html">
+        Cloud Volumes ONTAP and on-prem ONTAP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_anf.html">
+        Azure NetApp Files
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_s3.html">
+        Amazon S3 buckets
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_databases.html">
+        Database schemas
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_onedrive.html">
+        OneDrive accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_file_shares.html">
+        File shares
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_object_storage.html">
+        Object storage
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_controlling_governance_data.html">
+        View governance details about your data
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_controlling_private_data.html">
+        View compliance details about your data
+      </a></li><li class="  active "><a class="na-navbar-padding" href="task_managing_highlights.html">
+        Manage your private data
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_data_fusion.html">
+        Add custom personal data identifiers
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_generating_compliance_reports.html">
+        Generate reports
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_responding_to_dsar.html">
+        Respond to a DSAR
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_private_data_categories.html">
+        Categories of private data
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_compliance.html">
+        Remove data sources from Data Sense
+      </a></li><li class=" "><a class="na-navbar-padding" href="faq_cloud_compliance.html">
+        FAQ
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Organize your resources using tags</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_tagging.html">
+        Learn about tagging
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_using_tags.html">
+        Manage tags for your resources
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Enable real-time global file sharing</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_gfc.html">
+        Learn about Global File Cache
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_before_you_begin_to_deploy_gfc.html">
+        Before you begin to deploy Global File Cache
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_gfc_getting_started.html">
+        Getting started
+      </a></li><li class=" "><a class="na-navbar-padding" href="download_gfc_resources.html">
+        Before you begin to deploy Global File Cache Edge
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deploy_gfc_edge_instances.html">
+        Deploy Global File Cache Edge
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_gfc_enduser_training.html">
+        End-user training
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_gfc_additional_information.html">
+        Additional information
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Optimize cloud compute costs</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_compute.html">
+        Learn about the Compute service
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_getting_started_compute.html">
+        Get started
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Tier on-premises data to the cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cloud_tiering.html">
+        Learn about Cloud Tiering
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_aws.html">
+        Tier data to Amazon S3
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_azure.html">
+        Tier data to Azure Blob storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_gcp.html">
+        Tier data to Google Cloud Storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_storagegrid.html">
+        Tier data to StorageGRID
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_licensing_cloud_tiering.html">
+        Set up licensing
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_test.html">
+        Test cloud performance
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_tiering.html">
+        Manage data tiering
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_overview.html">
+        Get an overview of tiering
+      </a></li><li class=" "><a class="na-navbar-padding" href="faq_cloud_tiering.html">
+        FAQ
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_aws_support.html">
+        Supported Amazon S3 storage classes and regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_azure_support.html">
+        Supported Azure access tiers and regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_google_support.html">
+        Supported Google Cloud storage classes and regions
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_viewing_amazon_s3.html">
+        View Amazon S3 buckets
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Administer Cloud Manager</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage Connectors</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_finding_system_id.html">
+        Find the system ID for a Connector
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_connectors.html">
+        Manage existing Connectors
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> More ways to create Connectors</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_cloud_mgr_reqs.html">
+        Connector host requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_launching_aws_mktp.html">
+        Create from the AWS Marketplace
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_launching_azure_mktp.html">
+        Create from the Azure Marketplace
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_installing_linux.html">
+        Manually install the software
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_connector_default_config.html">
+        Default configuration
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage cloud provider credentials</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> AWS</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_accounts_aws.html">
+        Learn about AWS credentials
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_adding_aws_accounts.html">
+        Manage AWS credentials
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_accounts_azure.html">
+        Learn about Azure credentials
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_adding_azure_accounts.html">
+        Manage Azure credentials
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> GCP</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_accounts_gcp.html">
+        Learn about GCP credentials
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_adding_gcp_accounts.html">
+        Manage GCP credentials
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_adding_nss_accounts.html">
+        Manage NSS credentials
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_cloud_central_accounts.html">
+        Manage your account
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_installing_https_cert.html">
+        Install an HTTPS certificate
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_removing.html">
+        Remove working environments
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_configuring_proxy.html">
+        Configure proxy settings
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_user_roles.html">
+        User roles
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_permissions.html">
+        Permissions
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_aws_marketplace.html">
+        AWS Marketplace pages
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Automate with the API and IaC tools</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/occm/api.html">
+        API Developer Guide
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_infrastructure_as_code.html">
+        Automate using IaC tools
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services">
+        Troubleshoot issues
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_additional_info.html">
+        Related links
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_earlier_versions.html">
+        Earlier versions
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_legal_notices.html">
+        Legal notices
+      </a></li></ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      
+
+
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Managing your private data</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2021-07-02 13:18:19 +0000">07/02/2021</time>
+    
+  
+
+<span>Contributors
+  <a target="_blank" href="https://github.com/netapp-tonacki">
+    <img  class="avatar avatar-small"
+          alt="netapp-tonacki"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/38222299?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+  <span>
+    <a target="_blank" href="/us-en/occm/pdfs/pages/task_managing_highlights.pdf" role="button">
+      <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>Download PDF of this page</a>
+  </span>
+
+
+</p>
+
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Cloud Data Sense provides many ways for you to manage your private data. Some functionality just makes it easier to see the data that is most important to you, and other functionality allows you to make changes to the data.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using the "Policy" functionality you can create your own custom search queries so that you can easily see the results by clicking one button.</p>
+</li>
+<li>
+<p>You can send email alerts to Cloud Manager users when certain critical Policies return results.</p>
+</li>
+<li>
+<p>You can add a Status to files that you want to mark for some type of follow-up.</p>
+</li>
+<li>
+<p>If you are subscribed to <a href="https://azure.microsoft.com/en-us/services/information-protection/" target="_blank" rel="noopener">Azure Information Protection (AIP)</a> to classify and protect your files, you can use Cloud Data Sense to manage those AIP labels.</p>
+</li>
+<li>
+<p>You can delete files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The capabilities described in this section are available only if you have chosen to perform a full classification scan on your data sources. Data sources that have had a mapping-only scan do not show file-level details.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="controlling-your-data-using-policies">Controlling your data using Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Policies are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Data Sense provides a set of predefined Policies based on common customer requests. You can create custom Policies that provide results for searches specific to your organization.</p>
+</div>
+<div class="paragraph">
+<p>Policies provide the following functionality:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#list-of-predefined-policies">Predefined Policies</a> from NetApp based on user requests</p>
+</li>
+<li>
+<p>Ability to create your own custom Policies</p>
+</li>
+<li>
+<p>Launch the Investigation page with the results from your Policies in one click</p>
+</li>
+<li>
+<p>Send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data</p>
+</li>
+<li>
+<p>Assign AIP (Azure Information Protection) labels automatically to all files that match the criteria defined in a Policy</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <strong>Policies</strong> tab in the Compliance Dashboard lists all the predefined and custom Policies available on this instance of Cloud Data Sense.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_highlights_tab.png" alt="A screenshot of the Policies tab in the Cloud Data Sense dashboard."></span></p>
+</div>
+<div class="paragraph">
+<p>In addition, Policies appear in the list of Filters in the Investigation page.</p>
+</div>
+<div class="sect2">
+<h3 id="viewing-policy-results-in-the-investigation-page">Viewing Policy results in the Investigation page</h3>
+<div class="paragraph">
+<p>To display the results for a Policy in the Investigation page, click the <span class="image"><img src="./media/screenshot_gallery_options.gif" alt="More button"></span> button for a specific Policy, and then select <strong>Investigate Results</strong>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_highlights_investigate.png" alt="A screenshot of selecting Investigate Results for a specific Policy from the Policies tab."></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-custom-policies">Creating custom Policies</h3>
+<div class="paragraph">
+<p>You can create your own custom Policies that provide results for searches specific to your organization.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the Data Investigation page, define your search by selecting all the filters you want to use. See <a href="task_controlling_private_data.html#filtering-data-in-the-data-investigation-page" target="_blank" rel="noopener">Filtering data in the Data Investigation page</a> for details.</p>
+</li>
+<li>
+<p>Once you have all the filter characteristics just the way you want them, click <strong>Create Policy from this search</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_save_as_highlight.png" alt="A screenshot showing how to save a filtered query as a Policy."></span></p>
+</div>
+</li>
+<li>
+<p>Name the Policy and select other actions that can be performed by the Policy:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter a unique name and description.</p>
+</li>
+<li>
+<p>Optionally, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent.</p>
+</li>
+<li>
+<p>Optionally, check the box to automatically assign AIP labels to files that match the Policy parameters, and select the label. (Only if you have already integrated AIP labels. Learn more about <a href="#categorizing-your-data-using-aip-labels">AIP labels</a>.)</p>
+</li>
+<li>
+<p>Click <strong>Create Policy</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_save_highlight.png" alt="A screenshot that shows how to configure the Policy and save it."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>The new Policy appears in the Policies tab.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-policies">Editing Policies</h3>
+<div class="paragraph">
+<p>You can modify certain parts of a Policy depending on the type of Policy:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Custom Policies - You can modify the <em>Name</em>, the <em>Description</em>, whether email notifications are sent, and whether AIP labels are added.</p>
+</li>
+<li>
+<p>Predefined Policies - You can modify only whether email notifications are sent and whether AIP labels are added.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you need to change the filter parameters for a custom Policy, you&#8217;ll need to create a new Policy with the parameters you want, and then delete the old Policy.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To modify a Policy, click the <strong>Edit</strong> button, enter your changes on the <em>Edit Policy</em> page, and click <strong>Save Policy</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-policies">Deleting Policies</h3>
+<div class="paragraph">
+<p>You can delete any custom Policy that you created if you no longer need it. You can&#8217;t delete any of the predefined Policies.</p>
+</div>
+<div class="paragraph">
+<p>To delete a Policy, click the <span class="image"><img src="./media/screenshot_gallery_options.gif" alt="More button"></span> button for a specific Policy, click <strong>Delete Policy</strong>, and then click <strong>Delete Policy</strong> again in the confirmation dialog.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="applying-status-tags-to-manage-your-scanned-files">Applying Status tags to manage your scanned files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add a Status to files that you want to mark for some type of follow-up. For example, you may have found some duplicate files and you want to delete one of them, but you need to check to see which one should be deleted. You could add a status of "Check to delete" to the file so you know this file requires some research and some type of future action.</p>
+</div>
+<div class="paragraph">
+<p>Data Sense enables you to view the Statuses that are assigned to files, add or remove a Status from files, and change the name or delete an existing Status.</p>
+</div>
+<div class="paragraph">
+<p>Note that the Status is not added to the file in the same way as AIP Labels are part of the file metadata. The Status is just seen by Cloud Manager users using Cloud Data Sense so you can see if a file needs to be deleted, or checked for some type of follow-up.</p>
+</div>
+<div class="sect2">
+<h3 id="viewing-status-tags-assigned-to-your-files">Viewing Status tags assigned to your files</h3>
+<div class="paragraph">
+<p>You can view all the files that have a specific Status assigned.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the <strong>Investigation</strong> tab from Cloud Data Sense.</p>
+</li>
+<li>
+<p>In the Data Investigation page, click <strong>Status</strong> in the Filters pane and then select the required Status.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_filter_status.png" alt="A screenshot showing how to select a particular Status from the Filters pane."></span></p>
+</div>
+<div class="paragraph">
+<p>The Investigation Results pane lists all the files that have that Status assigned.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="assigning-a-status-tag-to-files">Assigning a Status tag to files</h3>
+<div class="paragraph">
+<p>You can add, change, and remove a Status tag from your files.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Data Investigation results pane, click <span class="image"><img src="./media/button_down_caret.png" alt="down-caret"></span> for the file to expand the file metadata details.</p>
+</li>
+<li>
+<p>Click the <strong>Status</strong> field and assign a Status:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To assign an existing Status, click that Status. For example, "Action Required".</p>
+</li>
+<li>
+<p>To create a new Status and assign it to the file, click <strong>Add New Status</strong>, enter the name of the new Status, and click <strong>Done</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_status_manually.png" alt="A screenshot showing how to assign a Status tag to a file in the Data Investigation page."></span></p>
+</div>
+<div class="paragraph">
+<p>The Status tag appears in the file metadata.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-and-deleting-a-status-tag">Editing and deleting a Status tag</h3>
+<div class="paragraph">
+<p>You can edit a Status tag to change the name, or you can delete a Status if you don&#8217;t need to use it anymore. Click the <span class="image"><img src="./media/button_3_vert_dots.png" alt="button 3 vert dots"></span> for an existing Status and click <strong>Edit Status Name</strong> or <strong>Delete Status</strong>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_edit_delete_status.png" alt="A screenshot showing how to delete a Status tag or rename the tag."></span></p>
+</div>
+<div class="paragraph">
+<p>When you change a Status name, it is changed for all files that were using the old name.</p>
+</div>
+<div class="paragraph">
+<p>When you delete a Status tag, it is cleared from all files that were using the Status.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="assigning-users-to-manage-certain-files">Assigning users to manage certain files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can assign a Cloud Manager user to a specific file so that person can be responsible for any follow-up actions that need to be done on the file. This capability is often used with the feature to add custom Status tags to a file.</p>
+</div>
+<div class="paragraph">
+<p>For example, you might have a file that contains certain personal data that allows too many users read and write access (open permissions). So you could assign the Status tag "Change permissions" and assign this file to user "Joan Smith" so they can decide how to fix the issue. When they have fixed the issue they could change the Status tag to "Completed".</p>
+</div>
+<div class="paragraph">
+<p>Note that the user name is not added to the file as part of the file metadata - it is just seen by Cloud Manager users when using Cloud Data Sense.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Data Investigation results pane, click <span class="image"><img src="./media/button_down_caret.png" alt="down-caret"></span> for the file to expand the file metadata details.</p>
+</li>
+<li>
+<p>Click the <strong>Assigned to</strong> field and select the user name.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_user_manually.png" alt="A screenshot showing how to assign a user to a file in the Data Investigation page."></span></p>
+</div>
+<div class="paragraph">
+<p>The User name appears in the file metadata.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A new Filter in the Investigation page enables you to easily view all files that have the same person in the "Assigned To" field.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="categorizing-your-data-using-aip-labels">Categorizing your data using AIP labels</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can manage AIP labels in the files that Cloud Data Sense is scanning if you have subscribed to <a href="https://azure.microsoft.com/en-us/services/information-protection/" target="_blank" rel="noopener">Azure Information Protection (AIP)</a>. AIP enables you to classify and protect documents and files by applying labels to content. Data Sense enables you to view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Data Sense supports AIP labels within the following file types: .DOC, .DOCX, .PDF, .PPTX, .XLS, .XLSX.</p>
+</div>
+<div class="paragraph">
+<p>Note that you can&#8217;t currently change labels in files larger than 30 MB. For OneDrive accounts the maximum file size is 4 MB.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If a file has a label which doesn’t exist anymore in AIP, Cloud Data Sense considers it as a file without a label.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="integrating-aip-labels-in-your-workspace">Integrating AIP labels in your workspace</h3>
+<div class="paragraph">
+<p>Before you can manage AIP labels, you need to integrate the AIP label functionality into Cloud Data Sense by signing into your existing Azure account. Once enabled, you can manage AIP labels within files for all <a href="concept_cloud_compliance.html#supported-working-environments-and-data-sources" target="_blank" rel="noopener">working environments and data sources</a> in your Cloud Manager workspace.</p>
+</div>
+<div class="ulist">
+<div class="title">Requirements</div>
+<ul>
+<li>
+<p>You must have an account and an Azure Information Protection license.</p>
+</li>
+<li>
+<p>You must have the login credentials for the Azure account.</p>
+</li>
+<li>
+<p>If you plan to change labels in files that reside in Amazon S3 buckets, ensure that the permission <code>s3:PutObject</code> is included in the IAM role. See <a href="task_scanning_s3.html#reviewing-s3-prerequisites" target="_blank" rel="noopener">setting up the IAM role</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the Cloud Data Sense Configuration page, click <strong>Integrate AIP Labels</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_integrate_aip_labels.png" alt="A screenshot that shows clicking the button to integrate AIP labels functionality into Cloud Data Sense."></span></p>
+</div>
+</li>
+<li>
+<p>In the Integrate AIP Labels dialog, click <strong>Sign in to Azure</strong>.</p>
+</li>
+<li>
+<p>In the Microsoft page that appears, select the account and enter the required credentials.</p>
+</li>
+<li>
+<p>Return to the Cloud Data Sense tab and you&#8217;ll see the message "<em>AIP Labels were integrated successfully with the account &lt;account_name&gt;</em>".</p>
+</li>
+<li>
+<p>Click <strong>Close</strong> and you&#8217;ll see the text <em>AIP Labels integrated</em> at the top of the page.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_aip_labels_int.png" alt="A screenshot that shows AIP labels have been successfully integrated."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>You can view and assign AIP labels from the results pane of the Investigation page. You can also assign AIP labels to files using Policies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-aip-labels-in-your-files">Viewing AIP labels in your files</h3>
+<div class="paragraph">
+<p>You can view the current AIP label that is assigned to a file.</p>
+</div>
+<div class="paragraph">
+<p>In the Data Investigation results pane, click <span class="image"><img src="./media/button_down_caret.png" alt="down-caret"></span> for the file to expand the file metadata details.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_show_label.png" alt="A screenshot showing the metadata details for a single file; including the assigned AIP label."></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="assigning-aip-labels-manually">Assigning AIP labels manually</h3>
+<div class="paragraph">
+<p>You can add, change, and remove AIP labels from your files using Cloud Data Sense.</p>
+</div>
+<div class="paragraph">
+<p>Follow these steps to assign an AIP label to a single file.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Data Investigation results pane, click <span class="image"><img src="./media/button_down_caret.png" alt="down-caret"></span> for the file to expand the file metadata details.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_label_manually.png" alt="A screenshot showing the metadata details for a file in the Data Investigation page."></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Assign a Label to this file</strong> and then select the label.</p>
+<div class="paragraph">
+<p>The label appears in the file metadata.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="assigning-aip-labels-automatically-with-policies">Assigning AIP labels automatically with Policies</h3>
+<div class="paragraph">
+<p>You can assign an AIP label to all the files that meet the criteria of the Policy. You can specify the AIP label when creating the Policy, or you can add the label when editing any Policy.</p>
+</div>
+<div class="paragraph">
+<p>Labels are added or updated in files continuously as Cloud Data Sense scans your files.</p>
+</div>
+<div class="paragraph">
+<p>Depending on whether a label is already applied to a file, and the classification level of the label, the following actions are taken when changing a label:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">If the file&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Then&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has no label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The label is added</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has an existing label of a lower level of classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The higher level label is added</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has an existing label of a higher level of classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The higher level label is retained</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is assigned a label both manually and by a Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The higher level label is added</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is assigned two different labels by two Policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The higher level label is added</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Follow these steps to add an AIP label to an existing Policy.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the Policies List page, click <strong>Edit</strong> for the Policy where you want to add (or change) the AIP label.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_label_highlight_1.png" alt="A screenshot showing how to edit an existing Policy."></span></p>
+</div>
+</li>
+<li>
+<p>In the Edit Policy page, check the box to enable automatic labels for files that match the Policy parameters, and select the label (for example, <strong>General</strong>).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_label_highlight_2.png" alt="A screenshot showing how to select the label to be assigned to files that match the Policy."></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Save Policy</strong> and the label appears in the Policy description.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a Policy was configured with a label, but the label has since been removed from AIP, the label name is turned to OFF and the label is not assigned anymore.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removing-the-aip-integration">Removing the AIP integration</h3>
+<div class="paragraph">
+<p>If you no longer want the ability to manage AIP labels in files, you can remove the AIP account from the Cloud Data Sense interface.</p>
+</div>
+<div class="paragraph">
+<p>Note that no changes are made to the labels you have added using Data Sense. The labels that exist in files will stay as they currently exist.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the <em>Configuration</em> page, click <strong>AIP Labels integrated &gt; Remove Integration</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_un_integrate_aip_labels.png" alt="A screenshot showing how to remove AIP integrations with Cloud Data Sense."></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Remove Integration</strong> from the confirmation dialog.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sending-email-alerts-when-non-compliant-data-is-found">Sending email alerts when non-compliant data is found</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Data Sense can send email alerts to Cloud Manager users when certain critical Policies return results so you can get notifications to protect your data. You can choose to send the email notifications on a daily, weekly, or monthly basis.</p>
+</div>
+<div class="paragraph">
+<p>You can configure this setting when creating the Policy or when editing any Policy.</p>
+</div>
+<div class="paragraph">
+<p>Follow these steps to add email updates to an existing Policy.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the Policies List page, click <strong>Edit</strong> for the Policy where you want to add (or change) the email setting.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_email_alert_1.png" alt="A screenshot showing how to edit an existing Policy."></span></p>
+</div>
+</li>
+<li>
+<p>In the Edit Policy page, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent (for example, every <strong>Week</strong>).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_email_alert_2.png" alt="A screenshot showing how to choose the email criterial to be sent for the Policy."></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Save Policy</strong> and the interval at which the email is sent appears in the Policy description.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>The first email is sent now if there are any results from the Policy - but only if any files meet the Policy criteria. No personal information is sent in the notification emails. The email indicates that there are files that match the Policy criteria, and it provides a link to the Policy results.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deleting-source-files">Deleting source files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can permanently remove source files that seem insecure or too risky to leave in your storage system, or that you have identified as a duplicate. This action is permanent and there is no undo.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can&#8217;t delete files that reside in databases or files that reside in volume Backups.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Requirements</div>
+<p>You must have the Account Admin or Workspace Admin role to delete files.</p>
+</div>
+<div class="paragraph">
+<p>Deleting files requires the following permissions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For NFS data – the export policy needs to be defined with write permissions.</p>
+</li>
+<li>
+<p>For CIFS data – the CIFS credentials need to have write permissions.</p>
+</li>
+<li>
+<p>For S3 data - the IAM role must include the following permission: <code>s3:DeleteObject</code></p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Data Investigation results pane, select the file, or files, that you want to delete and click <strong>Delete</strong> from the button bar.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_delete_multi_files.png" alt="A screenshot showing how to select the files to delete, and the Delete button, from the Data Investigation page."></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To select all files on the current page, check the box in the title row (<span class="image"><img src="./media/button_select_all_files.png" alt="button select all files"></span>). (You can&#8217;t select files from more than one page.)</p>
+</li>
+<li>
+<p>To select individual files, check the box for each file (<span class="image"><img src="./media/button_backup_1_volume.png" alt="button backup 1 volume"></span>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Because the delete operation is permanent, you must type "<strong>permanently delete</strong>" in the subsequent <em>Delete File</em> dialog and click <strong>Delete File</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Note that you can also delete an individual file when viewing the metadata details for a file. Just click <strong>Delete this file</strong>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_delete_file.png" alt="A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page."></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="moving-source-files-to-an-nfs-share">Moving source files to an NFS share</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can move source files that Data Sense is scanning to any NFS share. The NFS share does not need to be integrated with Data Sense (see <a href="task_scanning_file_shares.html">Scanning file shares</a>).</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can&#8217;t move files that reside in databases or files that reside in volume Backups.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Requirements</div>
+<p>You must have the Account Admin or Workspace Admin role to move files.</p>
+</div>
+<div class="paragraph">
+<p>Moving files requires that the NFS share allows access from the Data Sense instance.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Data Investigation results pane, select the file, or files, that you want to move and click <strong>Move</strong> from the button bar.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_move_multi_files.png" alt="A screenshot showing how to select the files to move, and the Move button, from the Data Investigation page."></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To select all files on the current page, check the box in the title row (<span class="image"><img src="./media/button_select_all_files.png" alt="button select all files"></span>). (You can&#8217;t select files from more than one page.)</p>
+</li>
+<li>
+<p>To select individual files, check the box for each file (<span class="image"><img src="./media/button_backup_1_volume.png" alt="button backup 1 volume"></span>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the <em>Move File</em> dialog, enter the name of the NFS share where all selected files will be moved in the format <code>&lt;host_name&gt;:/&lt;share_path&gt;</code>, and click <strong>Move File</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Note that you can also move an individual file when viewing the metadata details for a file. Just click <strong>Move file</strong>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_move_file.png" alt="A screenshot showing selection of the Move File button from the metadata details for a file in the Data Investigation page."></span></p>
+</div>
+<div class="sect2">
+<h3 id="list-of-predefined-policies">List of predefined Policies</h3>
+<div class="paragraph">
+<p>Cloud Data Sense provides the following system-defined Policies:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 23.8095%;">
+<col style="width: 38.0952%;">
+<col style="width: 38.0953%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 publicly-exposed private data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 Objects containing personal or sensitive personal information, with open Public read access.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(S3 Public) AND contains personal OR sensitive personal info)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PCI DSS – Stale data over 30 days</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files containing Credit Card information, last modified over 30 days ago.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains credit card AND last modified over 30 days</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HIPAA – Stale data over 30 days</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files containing Health information, last modified over 30 days ago.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains health data (defined same way as in HIPAA report) AND last modified over 30 days</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private data – Stale over 7 years</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files containing personal or sensitive personal information, last modified over 7 years ago.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files containing personal or sensitive personal information, last modified over 7 years ago</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GDPR – European citizens</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files containing more than 5 identifiers of an EU country’s citizens or DB Tables containing identifiers of an EU country’s citizens.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files containing over 5 identifiers of an (one) EU citizens or DB Tables containing rows with over 15% of columns with one country’s EU identifiers. (any one of the national identifiers of the European countries. Does not include Brazil, California, USA SSN, Israel, South Africa)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CCPA – California residents</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files containing over 10 California Driver’s License identifiers or DB Tables with this identifier.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files containing over 10 California Driver’s License identifiers OR DB Tables containing California Driver’s license</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Subject names – High risk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files with over 50 Data Subject names.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files with over 50 Data Subject names</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email Addresses – High risk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personal data – High risk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files with over 20 Personal data identifiers, or DB Columns with over 50% of their rows containing Personal data identifiers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files with over 20 personal, or DB Columns with over 50% of their rows containing personal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensitive Personal data – High risk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files with over 20 Sensitive Personal data identifiers, or DB Columns with over 50% of their rows containing Sensitive Personal data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files with over 20 sensitive personal, or DB Columns with over 50% of their rows containing sensitive personal</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div class="page-nav-contribute"  >
+      <div class="page-nav-contribute-title">CONTRIBUTE</div>
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/blob/main/task_managing_highlights.adoc" class="btn btn-default githubEditButton" role="button"><img src="/us-en/occm/images/github.png" class="github-icon" />Edit on GitHub</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Managing your private data](https://docs.netapp.com/us-en/occm/task_managing_highlights.html)" class="btn btn-default githubEditButton" role="button"><img src="/us-en/occm/images/github.png" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Contributor's Guide</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2021 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
+  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/us-en/occm/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/us-en/occm/js/prism.js'></script>
+      <script type="text/javascript" src='/us-en/occm/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/us-en/occm/js/www-ntap.js'></script>
+    <script src='/us-en/occm/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>

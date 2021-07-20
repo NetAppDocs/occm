@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>occm | NetApp Cloud Docs</title>
+    <atom:link href="https://docs.netapp.com/us-en/occm/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://docs.netapp.com/us-en/occm</link>
+    <description>The latest updates from NetApp Cloud Docs</description>
+    <language>en-us</language>
+    <ttl>60</ttl>
+    <pubDate>Tue, 20 Jul 2021 16:53:49 +0000</pubDate>
+    <lastBuildDate>Tue, 20 Jul 2021 16:53:49 +0000</lastBuildDate>
+    
+    
+    
+    <item>
+      <title>What&amp;#8217;s new in Cloud Manager 3.9 (16 Jul 2021)</title>
+      <pubDate>Fri, 16 Jul 2021 14:15:30 +0000</pubDate>
+      <link>https://docs.netapp.com/us-en/occm/reference_new_occm.html?time=1626444930</link>
+      <guid isPermaLink="false">Fri, 16 Jul 2021 14:15:30 +0000</guid>
+      <description><![CDATA[ Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes. ]]></description>
+    </item>
+    
+    
+  </channel>
+</rss>

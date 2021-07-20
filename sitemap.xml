@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/api_sync.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_accounts_aws.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_accounts_azure.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_accounts_gcp.html</loc>
+      
+      <lastmod>2021-06-10T17:36:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_active_iq.html</loc>
+      
+      <lastmod>2021-06-10T17:59:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_azure_netapp_files.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_backup_to_cloud.html</loc>
+      
+      <lastmod>2021-07-16T14:15:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_before_you_begin_to_deploy_gfc.html</loc>
+      
+      <lastmod>2021-07-05T18:48:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_cloud_central_accounts.html</loc>
+      
+      <lastmod>2021-07-20T15:04:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_cloud_compliance.html</loc>
+      
+      <lastmod>2021-07-13T12:44:00+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_cloud_sync.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_cloud_tiering.html</loc>
+      
+      <lastmod>2021-07-06T15:35:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_compute.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_connectors.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_cvs_aws.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_cvs_gcp.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_data_tiering.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_evaluating.html</loc>
+      
+      <lastmod>2021-07-06T14:34:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_flash_cache.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_gfc.html</loc>
+      
+      <lastmod>2021-06-09T13:21:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_gfc_enduser_training.html</loc>
+      
+      <lastmod>2021-06-09T13:21:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_ha.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_ha_azure.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_ha_google_cloud.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_license_management.html</loc>
+      
+      <lastmod>2021-07-06T17:56:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_licensing.html</loc>
+      
+      <lastmod>2021-07-08T17:26:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_monitoring.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_overview.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_overview_cvo.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_performance.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_replication.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_replication_policies.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_resource_templates.html</loc>
+      
+      <lastmod>2021-06-17T19:26:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_saas.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_security.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_storage.html</loc>
+      
+      <lastmod>2021-07-01T19:16:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_storage_management.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_tagging.html</loc>
+      
+      <lastmod>2021-07-19T14:32:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_worm.html</loc>
+      
+      <lastmod>2021-07-05T18:38:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/concept_write_speed.html</loc>
+      
+      <lastmod>2021-07-19T14:39:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/download_gfc_resources.html</loc>
+      
+      <lastmod>2021-06-09T13:21:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/faq_cloud_compliance.html</loc>
+      
+      <lastmod>2021-06-29T16:29:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/faq_cloud_tiering.html</loc>
+      
+      <lastmod>2021-07-20T15:04:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/faq_saas.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/faq_sync.html</loc>
+      
+      <lastmod>2021-07-04T22:31:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/</loc>
+      
+      <lastmod>2021-05-27T12:00:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_additional_info.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_aws_marketplace.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_aws_support.html</loc>
+      
+      <lastmod>2021-05-26T14:03:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_azure_support.html</loc>
+      
+      <lastmod>2021-05-26T14:03:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_backup_multi_account_aws.html</loc>
+      
+      <lastmod>2021-06-15T19:02:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_backup_multi_account_azure.html</loc>
+      
+      <lastmod>2021-06-16T14:36:12+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_cloud_mgr_reqs.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_connector_default_config.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_cross_account.html</loc>
+      
+      <lastmod>2021-06-21T12:20:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_cvs_service_levels_and_quotas.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_default_configs.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_earlier_versions.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_checklist_cm.html</loc>
+      
+      <lastmod>2021-07-06T14:58:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_gfc_additional_information.html</loc>
+      
+      <lastmod>2021-06-09T13:21:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_google_support.html</loc>
+      
+      <lastmod>2021-05-26T14:03:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_infrastructure_as_code.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_issues.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_key_changes.html</loc>
+      
+      <lastmod>2021-07-05T14:39:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_legal_notices.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_limitations.html</loc>
+      
+      <lastmod>2021-07-08T16:00:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_networking.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_networking_aws.html</loc>
+      
+      <lastmod>2021-05-12T15:46:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_networking_azure.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_networking_cloud_manager.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_networking_gcp.html</loc>
+      
+      <lastmod>2021-06-05T17:42:12+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_new_occm.html</loc>
+      
+      <lastmod>2021-07-16T14:15:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_permissions.html</loc>
+      
+      <lastmod>2021-07-05T14:07:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_private_data_categories.html</loc>
+      
+      <lastmod>2021-05-21T19:09:09+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_security_groups.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_security_groups_windows_ad_servers.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_sync_networking.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_sync_requirements.html</loc>
+      
+      <lastmod>2021-07-04T21:41:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_user_roles.html</loc>
+      
+      <lastmod>2021-07-20T15:04:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/reference_whats_next.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm//search.html</loc>
+      
+      <lastmod>2021-07-20T16:44:00+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_adding_aws_accounts.html</loc>
+      
+      <lastmod>2021-07-05T14:23:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_adding_azure_accounts.html</loc>
+      
+      <lastmod>2021-07-08T15:40:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_adding_gcp_accounts.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_adding_nss_accounts.html</loc>
+      
+      <lastmod>2021-07-11T15:35:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_adding_ontap_cloud.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_backup_from_onprem.html</loc>
+      
+      <lastmod>2021-07-19T14:32:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_backup_onprem_private_cloud.html</loc>
+      
+      <lastmod>2021-07-19T14:32:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_backup_to_azure.html</loc>
+      
+      <lastmod>2021-06-30T22:04:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_backup_to_gcp.html</loc>
+      
+      <lastmod>2021-05-27T17:06:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_backup_to_s3.html</loc>
+      
+      <lastmod>2021-06-30T21:42:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_check_template_compliance.html</loc>
+      
+      <lastmod>2021-07-15T20:33:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_configuring_proxy.html</loc>
+      
+      <lastmod>2021-06-30T17:02:32+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_connecting_kubernetes.html</loc>
+      
+      <lastmod>2021-07-10T19:00:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_connecting_to_otc.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_controlling_governance_data.html</loc>
+      
+      <lastmod>2021-05-25T18:13:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_controlling_private_data.html</loc>
+      
+      <lastmod>2021-07-02T00:09:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_creating_connectors.html</loc>
+      
+      <lastmod>2021-06-30T19:02:12+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_creating_connectors_aws.html</loc>
+      
+      <lastmod>2021-07-05T18:42:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_creating_connectors_azure.html</loc>
+      
+      <lastmod>2021-07-05T18:48:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_creating_connectors_gcp.html</loc>
+      
+      <lastmod>2021-07-08T18:21:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_creating_gcp_service_account.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_define_templates.html</loc>
+      
+      <lastmod>2021-07-08T17:10:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_deleting_working_env.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_deploy_cloud_compliance.html</loc>
+      
+      <lastmod>2021-06-18T19:18:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_deploy_gfc_edge_instances.html</loc>
+      
+      <lastmod>2021-06-09T13:21:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_deploying_gcp.html</loc>
+      
+      <lastmod>2021-07-19T16:10:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_deploying_otc_aws.html</loc>
+      
+      <lastmod>2021-07-19T15:09:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_deploying_otc_azure.html</loc>
+      
+      <lastmod>2021-07-19T16:10:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_discovering_ontap.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_enabling_private_link.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_encrypting_volumes.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_finding_system_id.html</loc>
+      
+      <lastmod>2021-06-21T14:13:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_generating_compliance_reports.html</loc>
+      
+      <lastmod>2021-07-02T00:09:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_getting_started_aws.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_getting_started_aws_c2s.html</loc>
+      
+      <lastmod>2021-06-11T19:11:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_getting_started_azure.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_getting_started_compliance.html</loc>
+      
+      <lastmod>2021-07-01T18:53:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_getting_started_compute.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_getting_started_gcp.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_getting_started_monitoring.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_gfc_getting_started.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_installing_https_cert.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_installing_linux.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_launching_aws_mktp.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_launching_azure_mktp.html</loc>
+      
+      <lastmod>2021-07-05T18:48:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_licensing_cloud_tiering.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_logging_in.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_manage_anf.html</loc>
+      
+      <lastmod>2021-06-30T15:34:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_manage_anf_volumes.html</loc>
+      
+      <lastmod>2021-06-10T16:29:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_manage_cloud_volumes_gcp_snapshots.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_manage_cloud_volumes_snapshots.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_manage_cvs_aws.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_manage_cvs_gcp.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_backups.html</loc>
+      
+      <lastmod>2021-07-16T14:15:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_cloud_central_accounts.html</loc>
+      
+      <lastmod>2021-07-20T15:04:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_compliance.html</loc>
+      
+      <lastmod>2021-06-29T16:29:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_connectors.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_data_fusion.html</loc>
+      
+      <lastmod>2021-07-02T00:09:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_highlights.html</loc>
+      
+      <lastmod>2021-07-02T13:18:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_licenses.html</loc>
+      
+      <lastmod>2021-07-12T14:50:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_ontap.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_replication.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_state.html</loc>
+      
+      <lastmod>2021-06-29T11:20:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_storage.html</loc>
+      
+      <lastmod>2021-06-10T20:28:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_svms.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_svms_aws.html</loc>
+      
+      <lastmod>2021-05-25T20:38:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_svms_azure.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_managing_tiering.html</loc>
+      
+      <lastmod>2021-06-10T16:29:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_modifying_ontap_cloud.html</loc>
+      
+      <lastmod>2021-05-29T19:28:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_monitoring_costs.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_overriding_cifs_locks.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_planning_your_config.html</loc>
+      
+      <lastmod>2021-05-30T22:30:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_planning_your_config_azure.html</loc>
+      
+      <lastmod>2021-05-25T20:38:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_planning_your_config_gcp.html</loc>
+      
+      <lastmod>2021-07-01T19:16:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_protecting_ransomware.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_provisioning_ontap.html</loc>
+      
+      <lastmod>2021-06-10T16:29:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_provisioning_storage.html</loc>
+      
+      <lastmod>2021-06-10T16:29:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_registering.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_removing.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_replicating_data.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_responding_to_dsar.html</loc>
+      
+      <lastmod>2021-07-02T00:09:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_restore_backups.html</loc>
+      
+      <lastmod>2021-06-25T14:36:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_run_templates.html</loc>
+      
+      <lastmod>2021-06-16T20:58:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_scanning_anf.html</loc>
+      
+      <lastmod>2021-07-01T18:53:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_scanning_databases.html</loc>
+      
+      <lastmod>2021-07-02T13:18:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_scanning_file_shares.html</loc>
+      
+      <lastmod>2021-07-02T17:04:50+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_scanning_object_storage.html</loc>
+      
+      <lastmod>2021-07-01T18:53:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_scanning_onedrive.html</loc>
+      
+      <lastmod>2021-07-02T17:04:50+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_scanning_s3.html</loc>
+      
+      <lastmod>2021-07-01T18:53:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_setting_up_cloud_central_accounts.html</loc>
+      
+      <lastmod>2021-07-20T15:04:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_setting_up_gcp_encryption.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_setting_up_kms.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_setting_up_ontap_cloud.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_setting_up_transit_gateway.html</loc>
+      
+      <lastmod>2021-06-11T19:21:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_setup_cvs_gcp.html</loc>
+      
+      <lastmod>2021-05-17T15:33:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_signing_up.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_copying_acls.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_creating_relationships.html</loc>
+      
+      <lastmod>2021-07-08T16:00:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_external_vault.html</loc>
+      
+      <lastmod>2021-07-11T15:46:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_installing_aws.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_installing_azure.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_installing_gcp.html</loc>
+      
+      <lastmod>2021-07-11T15:46:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_installing_linux.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_licensing.html</loc>
+      
+      <lastmod>2021-06-03T12:38:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_managing_data_brokers.html</loc>
+      
+      <lastmod>2021-07-04T22:31:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_managing_relationships.html</loc>
+      
+      <lastmod>2021-07-04T22:31:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_managing_reports.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_nfs_encryption.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_quick_start.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_sync_uninstalling.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_tiering.html</loc>
+      
+      <lastmod>2021-05-26T15:18:55+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_tiering_onprem_aws.html</loc>
+      
+      <lastmod>2021-07-12T14:50:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_tiering_onprem_azure.html</loc>
+      
+      <lastmod>2021-07-12T14:50:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_tiering_onprem_gcp.html</loc>
+      
+      <lastmod>2021-07-01T15:32:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_tiering_onprem_overview.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_tiering_onprem_s3_compat.html</loc>
+      
+      <lastmod>2021-07-01T15:32:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_tiering_onprem_storagegrid.html</loc>
+      
+      <lastmod>2021-07-01T15:32:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_tiering_test.html</loc>
+      
+      <lastmod>2021-05-05T20:03:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_updating_ontap_cloud.html</loc>
+      
+      <lastmod>2021-05-25T20:38:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_using_tags.html</loc>
+      
+      <lastmod>2021-07-19T14:32:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/occm/task_viewing_amazon_s3.html</loc>
+      
+      <lastmod>2021-05-21T13:36:29+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>

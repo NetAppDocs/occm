@@ -1,0 +1,3528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="at-element-marker">
+  <title>Launching Cloud Volumes ONTAP in GCP | NetApp Cloud Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Launching Cloud Volumes ONTAP in GCP | NetApp Cloud Docs" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/occm/task_deploying_gcp.html" />
+	<meta property="og:description" content="You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in Google Cloud Platform." />
+  <meta property="og:image" content="https://docs.netapp.com/us-en/occm/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta http-equiv="nss-product" content="OnCommand"/>
+  
+  <meta name="description" content="You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in Google Cloud Platform.">
+  <meta name="keywords" content=" Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, gcp, BYOL, license key, serial number, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, high availability, gcp ha, ha in gcp, ha pair">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/us-en/occm/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/us-en/occm/feed.xml">
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/us-en/occm/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/us-en/occm/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/us-en/occm/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/us-en/occm/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/us-en/occm/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/us-en/occm/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/us-en/occm/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/us-en/occm/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/us-en/occm/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/us-en/occm/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/occm/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/occm/css/na-pagenav.css' type='text/css'>
+
+  
+
+  
+  <link rel='stylesheet' href='/us-en/occm/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/us-en/occm/js/na-search.js'></script>
+  
+
+  
+  <script src='/us-en/occm/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/us-en/occm/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/occm/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/us-en/occm/js/na-utility.js'></script>
+  <script src='/us-en/occm/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/us-en/occm/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/us-en/occm/js/toc.js'></script>
+  <script src='/us-en/occm/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Product and Solutions</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support and Training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/us-en/occm/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/us-en/occm/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/us-en/occm/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" data-type="widget" data-placeholder="Search Documentation" data-no-results-found="No results were found for {query}" data-did-you-mean="Search for {suggestion}." data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" data-results-found="{hitCount} results found"  ></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar"><!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">English</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/occm" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/occm" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li></ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: English
+            </p>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+        <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">Home</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">Documentation</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Cloud Docs</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/us-en/occm/">Cloud&nbsp;Manager</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          Launching Cloud Volumes ONTAP in GCP
+        </li>
+      </ul>
+    </div>
+
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">PDFs<span>
+    </span>
+  </a>
+</div>
+<ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><div class="n-pdf-section">
+      <span class="n-pdf-section-title">Site</span>
+    </div>
+    <li>
+      <a target="_blank" href="/us-en/occm/pdfs/fullsite-sidebar/Cloud_Manager_documentation.pdf" >
+        <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+        Cloud Manager documentation
+      </a>
+    </li>
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Release_notes.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Release notes
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Cloud_Manager.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Cloud Manager
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started_with_Cloud_Manager.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started with Cloud Manager
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Set_up_a_Cloud_Central_account.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Set up a Cloud Central account
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Set_up_a_Connector.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Set up a Connector
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_Cloud_Volumes_ONTAP.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage Cloud Volumes ONTAP
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Learn.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Learn
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Storage.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Storage
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/High_availability_pairs.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            High-availability pairs
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started_in_AWS.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started in AWS
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Set_up_your_networking.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Set up your networking
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started_in_Azure.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started in Azure
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started_in_GCP.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started in GCP
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+    <div class="n-pdf-section">
+  <span class="n-pdf-section-title">This page</span>
+</div>
+
+<li class="active">
+  <a target="_blank" href="/us-en/occm/pdfs/pages/task_deploying_gcp.pdf" >
+    <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+    Launching Cloud Volumes ONTAP in GCP
+  </a>
+</li>
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Provision_and_manage_storage.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Provision and manage storage
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_storage_VMs.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage storage VMs
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Replicate_data.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Replicate data
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Monitor_performance.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Monitor performance
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Administer.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Administer
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Provision_volumes_using_a_file_service.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Provision volumes using a file service
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Azure_NetApp_Files.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Azure NetApp Files
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Cloud_Volumes_Service_for_AWS.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Cloud Volumes Service for AWS
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Reference.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Reference
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Cloud_Volumes_Service_for_GCP.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Cloud Volumes Service for GCP
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_ONTAP_clusters.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage ONTAP clusters
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Use_templates_to_standardize_resource_creation.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Use templates to standardize resource creation
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Back_up_data_to_the_cloud.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Back up data to the cloud
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Cross_account_and_cross_region_configurations.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Cross-account and cross-region configurations
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Copy_and_synchronize_data.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Copy and synchronize data
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/How_to_install_a_data_broker.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            How to install a data broker
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Tutorials.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Tutorials
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Gain_insight_into_data_privacy.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Gain insight into data privacy
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Activate_scanning_on_your_data_sources.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Activate scanning on your data sources
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Organize_your_resources_using_tags.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Organize your resources using tags
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Enable_real_time_global_file_sharing.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Enable real-time global file sharing
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Optimize_cloud_compute_costs.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Optimize cloud compute costs
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Tier_on_premises_data_to_the_cloud.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Tier on-premises data to the cloud
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Get_started.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Get started
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Reference.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Reference
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Administer_Cloud_Manager.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Administer Cloud Manager
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_Connectors.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage Connectors
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/More_ways_to_create_Connectors.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            More ways to create Connectors
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Manage_cloud_provider_credentials.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Manage cloud provider credentials
+          </a>
+        </li>
+        <span>
+          
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/AWS.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            AWS
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Azure.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Azure
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/GCP.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            GCP
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Reference.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Reference
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/us-en/occm/pdfs/sidebar/Automate_with_the_API_and_IaC_tools.pdf" >
+            <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>
+            Automate with the API and IaC tools
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+<script>
+  $("#toggleContainerPdf li.active").parents('li').toggle('display');
+  $("#toggleContainerPdf li.active").parents('span.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+  });
+</script><ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="index.html">
+        Cloud Manager 3.9 docs
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Release notes</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Manager</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_occm.html">
+        What's new
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_saas.html">
+        Transition to SaaS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_issues.html">
+        Known issues
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations.html">
+        Known limitations
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-volumes-ontap/">
+        Cloud Volumes ONTAP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_key_changes.html">
+        Important changes
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started with Cloud Manager</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_overview.html">
+        Learn about Cloud Manager
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_checklist_cm.html">
+        Getting started checklist
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_signing_up.html">
+        Sign up to Cloud Central
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_logging_in.html">
+        Log in to Cloud Manager
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up a Cloud Central account</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cloud_central_accounts.html">
+        Learn about Cloud Central accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_cloud_central_accounts.html">
+        Set up an account
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up a Connector</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_connectors.html">
+        Learn about Connectors
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_networking_cloud_manager.html">
+        Networking requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_creating_connectors_aws.html">
+        Create a Connector in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_creating_connectors_azure.html">
+        Create a Connector in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_creating_connectors_gcp.html">
+        Create a Connector in GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_whats_next.html">
+        Where to go next
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage Cloud Volumes ONTAP</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Learn</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_overview_cvo.html">
+        Overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Storage</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_storage.html">
+        Disks and aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_data_tiering.html">
+        Data tiering
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_storage_management.html">
+        Storage management
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_write_speed.html">
+        Write speed
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_flash_cache.html">
+        Flash Cache
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_worm.html">
+        WORM storage
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> High-availability pairs</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_ha.html">
+        HA pairs in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_ha_azure.html">
+        HA pairs in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_ha_google_cloud.html">
+        HA pairs in GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="concept_licensing.html">
+        Licensing
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_license_management.html">
+        Management of node-based BYOL
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_evaluating.html">
+        Evaluating
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_security.html">
+        Security
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_performance.html">
+        Performance
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html">
+        Supported configurations
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://cloud.netapp.com/cloud-volumes-global-regions">
+        Supported regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_active_iq.html">
+        AutoSupport and Active IQ Digital Advisor
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_default_configs.html">
+        Default configuration
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started in AWS</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_getting_started_aws.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_planning_your_config.html">
+        Plan your configuration
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up your networking</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_networking_aws.html">
+        Networking requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_transit_gateway.html">
+        Set up an AWS transit gateway
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_security_groups.html">
+        Security group rules for AWS
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_kms.html">
+        Set up the AWS KMS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deploying_otc_aws.html">
+        Launch a system in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_getting_started_aws_c2s.html">
+        Get started in AWS C2S
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started in Azure</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_getting_started_azure.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_planning_your_config_azure.html">
+        Plan your configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_networking_azure.html">
+        Set up your networking
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deploying_otc_azure.html">
+        Launch a system in Azure
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started in GCP</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_getting_started_gcp.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_planning_your_config_gcp.html">
+        Plan your configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_networking_gcp.html">
+        Set up your networking
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_creating_gcp_service_account.html">
+        Create a service account
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_gcp_encryption.html">
+        Use customer-managed encryption keys
+      </a></li><li class="  active "><a class="na-navbar-padding" href="task_deploying_gcp.html">
+        Launch a system in GCP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Provision and manage storage</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_provisioning_storage.html">
+        Create volumes, aggregates, and LUNs
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_storage.html">
+        Manage volumes and aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering.html">
+        Tier inactive data to object storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_connecting_kubernetes.html">
+        Use ONTAP as persistent storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_encrypting_volumes.html">
+        Encrypt volumes with NetApp encryption
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage storage VMs</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_managing_svms.html">
+        Work with storage VMs in Cloud Manager
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_svms_aws.html">
+        Create storage VMs in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_svms_azure.html">
+        Create storage VMs in Azure
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Replicate data</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_replication.html">
+        Learn about Replication
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_replicating_data.html">
+        Get started
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_replication.html">
+        Manage schedules and relationships
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_replication_policies.html">
+        Learn about replication policies
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Monitor performance</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_monitoring.html">
+        Learn about Monitoring
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_getting_started_monitoring.html">
+        Get started
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_protecting_ransomware.html">
+        Improve ransomware protection
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Administer</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_managing_licenses.html">
+        Manage licenses
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_registering.html">
+        Register pay-as-you-go systems
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setting_up_ontap_cloud.html">
+        Set up Cloud Volumes ONTAP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_updating_ontap_cloud.html">
+        Update software
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_modifying_ontap_cloud.html">
+        Modify system configurations
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_state.html">
+        Stop and start systems
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_monitoring_costs.html">
+        Monitor AWS costs
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_connecting_to_otc.html">
+        Connect to Cloud Volumes ONTAP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_adding_ontap_cloud.html">
+        Add existing systems
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_overriding_cifs_locks.html">
+        Override CIFS locks in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_enabling_private_link.html">
+        Use an Azure Private Link
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deleting_working_env.html">
+        Delete systems
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Provision volumes using a file service</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure NetApp Files</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_azure_netapp_files.html">
+        Learn about Azure NetApp Files
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_anf.html">
+        Set up Azure NetApp Files
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_anf_volumes.html">
+        Create and manage volumes
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Volumes Service for AWS</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cvs_aws.html">
+        Learn about Cloud Volumes Service for AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_cvs_aws.html">
+        Deploy and manage cloud volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_cloud_volumes_snapshots.html">
+        Manage cloud volumes snapshots
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_cvs_service_levels_and_quotas.html">
+        Service levels and allocated capacity
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_security_groups_windows_ad_servers.html">
+        AWS security group settings for Windows AD servers
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Volumes Service for GCP</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cvs_gcp.html">
+        Learn about Cloud Volumes Service for GCP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_setup_cvs_gcp.html">
+        Set up Cloud Volumes Service for GCP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_cvs_gcp.html">
+        Create and manage cloud volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_manage_cloud_volumes_gcp_snapshots.html">
+        Manage cloud volumes snapshots
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage ONTAP clusters</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_discovering_ontap.html">
+        Discover ONTAP clusters
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_ontap.html">
+        Manage clusters using Active IQ
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_provisioning_ontap.html">
+        Manage ONTAP volumes
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Use templates to standardize resource creation</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_resource_templates.html">
+        Learn about Application Templates
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_define_templates.html">
+        Build templates for your organization
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_check_template_compliance.html">
+        Check resources for template compliance
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_run_templates.html">
+        Run templates to create resources
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Back up data to the cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_backup_to_cloud.html">
+        Learn about Cloud Backup
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_backup_to_s3.html">
+        Back up Cloud Volumes ONTAP data to Amazon S3
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_backup_to_azure.html">
+        Back up Cloud Volumes ONTAP data to Azure Blob
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_backup_to_gcp.html">
+        Back up Cloud Volumes ONTAP data to Google Cloud
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_backup_from_onprem.html">
+        Back up on-premises ONTAP data to public cloud
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_backup_onprem_private_cloud.html">
+        Back up on-premises ONTAP data to private cloud
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_managing_backups.html">
+        Manage backups
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_restore_backups.html">
+        Restore from backups
+      </a></li><li class="subfolders "><a href="reference_cross_account.html">
+        <div class="na-navbar-padding"> Cross-account and cross-region configurations</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_backup_multi_account_aws.html">
+        Configure Backup for multi-account access in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_backup_multi_account_azure.html">
+        Configure Backup for multi-account access in Azure
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Copy and synchronize data</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cloud_sync.html">
+        Learn about Cloud Sync
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_sync_quick_start.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_sync_requirements.html">
+        Prepare the source and target
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_sync_networking.html">
+        Prepare networking
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> How to install a data broker</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_sync_installing_aws.html">
+        Install in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_installing_azure.html">
+        Install in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_installing_gcp.html">
+        Install in GCP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_installing_linux.html">
+        Install on a Linux host
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_sync_creating_relationships.html">
+        Create a sync relationship
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_licensing.html">
+        Pay for sync relationships
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Tutorials</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_sync_copying_acls.html">
+        Copy ACLs between shares
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_nfs_encryption.html">
+        Encrypt NFS data in flight
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_external_vault.html">
+        Use secrets from HashiCorp Vault
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_sync_managing_relationships.html">
+        Manage sync relationships
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_managing_data_brokers.html">
+        Manage data brokers
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_managing_reports.html">
+        View reports to tune your configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_sync_uninstalling.html">
+        Uninstall the data broker
+      </a></li><li class=" "><a class="na-navbar-padding" href="api_sync.html">
+        API
+      </a></li><li class=" "><a class="na-navbar-padding" href="faq_sync.html">
+        FAQ
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Gain insight into data privacy</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cloud_compliance.html">
+        Learn about Cloud Data Sense
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_deploy_cloud_compliance.html">
+        Deploy Cloud Data Sense
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Activate scanning on your data sources</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_getting_started_compliance.html">
+        Cloud Volumes ONTAP and on-prem ONTAP
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_anf.html">
+        Azure NetApp Files
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_s3.html">
+        Amazon S3 buckets
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_databases.html">
+        Database schemas
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_onedrive.html">
+        OneDrive accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_file_shares.html">
+        File shares
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_scanning_object_storage.html">
+        Object storage
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_controlling_governance_data.html">
+        View governance details about your data
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_controlling_private_data.html">
+        View compliance details about your data
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_highlights.html">
+        Manage your private data
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_data_fusion.html">
+        Add custom personal data identifiers
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_generating_compliance_reports.html">
+        Generate reports
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_responding_to_dsar.html">
+        Respond to a DSAR
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_private_data_categories.html">
+        Categories of private data
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_compliance.html">
+        Remove data sources from Data Sense
+      </a></li><li class=" "><a class="na-navbar-padding" href="faq_cloud_compliance.html">
+        FAQ
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Organize your resources using tags</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_tagging.html">
+        Learn about tagging
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_using_tags.html">
+        Manage tags for your resources
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Enable real-time global file sharing</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_gfc.html">
+        Learn about Global File Cache
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_before_you_begin_to_deploy_gfc.html">
+        Before you begin to deploy Global File Cache
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_gfc_getting_started.html">
+        Getting started
+      </a></li><li class=" "><a class="na-navbar-padding" href="download_gfc_resources.html">
+        Before you begin to deploy Global File Cache Edge
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_deploy_gfc_edge_instances.html">
+        Deploy Global File Cache Edge
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_gfc_enduser_training.html">
+        End-user training
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_gfc_additional_information.html">
+        Additional information
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Optimize cloud compute costs</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_compute.html">
+        Learn about the Compute service
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_getting_started_compute.html">
+        Get started
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Tier on-premises data to the cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_cloud_tiering.html">
+        Learn about Cloud Tiering
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_aws.html">
+        Tier data to Amazon S3
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_azure.html">
+        Tier data to Azure Blob storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_gcp.html">
+        Tier data to Google Cloud Storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_storagegrid.html">
+        Tier data to StorageGRID
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_licensing_cloud_tiering.html">
+        Set up licensing
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_test.html">
+        Test cloud performance
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_tiering.html">
+        Manage data tiering
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_tiering_onprem_overview.html">
+        Get an overview of tiering
+      </a></li><li class=" "><a class="na-navbar-padding" href="faq_cloud_tiering.html">
+        FAQ
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_aws_support.html">
+        Supported Amazon S3 storage classes and regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_azure_support.html">
+        Supported Azure access tiers and regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_google_support.html">
+        Supported Google Cloud storage classes and regions
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_viewing_amazon_s3.html">
+        View Amazon S3 buckets
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Administer Cloud Manager</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage Connectors</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="task_finding_system_id.html">
+        Find the system ID for a Connector
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_connectors.html">
+        Manage existing Connectors
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> More ways to create Connectors</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_cloud_mgr_reqs.html">
+        Connector host requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_launching_aws_mktp.html">
+        Create from the AWS Marketplace
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_launching_azure_mktp.html">
+        Create from the Azure Marketplace
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_installing_linux.html">
+        Manually install the software
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_connector_default_config.html">
+        Default configuration
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage cloud provider credentials</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> AWS</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_accounts_aws.html">
+        Learn about AWS credentials
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_adding_aws_accounts.html">
+        Manage AWS credentials
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_accounts_azure.html">
+        Learn about Azure credentials
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_adding_azure_accounts.html">
+        Manage Azure credentials
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> GCP</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="concept_accounts_gcp.html">
+        Learn about GCP credentials
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_adding_gcp_accounts.html">
+        Manage GCP credentials
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="task_adding_nss_accounts.html">
+        Manage NSS credentials
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_managing_cloud_central_accounts.html">
+        Manage your account
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_installing_https_cert.html">
+        Install an HTTPS certificate
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_removing.html">
+        Remove working environments
+      </a></li><li class=" "><a class="na-navbar-padding" href="task_configuring_proxy.html">
+        Configure proxy settings
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_user_roles.html">
+        User roles
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_permissions.html">
+        Permissions
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_aws_marketplace.html">
+        AWS Marketplace pages
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Automate with the API and IaC tools</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/occm/api.html">
+        API Developer Guide
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_infrastructure_as_code.html">
+        Automate using IaC tools
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services">
+        Troubleshoot issues
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_additional_info.html">
+        Related links
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_earlier_versions.html">
+        Earlier versions
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_legal_notices.html">
+        Legal notices
+      </a></li></ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      
+
+
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Launching Cloud Volumes ONTAP in GCP</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2021-07-19 16:10:39 +0000">07/19/2021</time>
+    
+  
+
+<span>Contributors
+  <a target="_blank" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-tonacki">
+    <img  class="avatar avatar-small"
+          alt="netapp-tonacki"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/38222299?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+  <span>
+    <a target="_blank" href="/us-en/occm/pdfs/pages/task_deploying_gcp.pdf" role="button">
+      <img src="/us-en/occm/images/pdf.png" width="20" height="20"/>Download PDF of this page</a>
+  </span>
+
+
+</p>
+
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>You can launch Cloud Volumes ONTAP in a single-node configuration or as an HA pair in Google Cloud Platform.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="launching-a-single-node-system-in-gcp">Launching a single-node system in GCP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.</p>
+</div>
+<div class="ulist">
+<div class="title">What you&#8217;ll need</div>
+<ul>
+<li>
+<p>You should have a <a href="task_creating_connectors_aws.html">Connector that is associated with your workspace</a>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><a href="concept_connectors.html">You should be prepared to leave the Connector running at all times</a>.</p>
+</li>
+<li>
+<p>You should have chosen a configuration and obtained GCP networking information from your administrator. For details, see <a href="task_planning_your_config_gcp.html">Planning your Cloud Volumes ONTAP configuration</a>.</p>
+</li>
+<li>
+<p>To deploy a BYOL system, you need the 20-digit serial number (license key).</p>
+</li>
+<li>
+<p>The following Google Cloud APIs should be <a href="https://cloud.google.com/apis/docs/getting-started#enabling_apis" target="_blank" rel="noopener">enabled in your project</a>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Deployment Manager V2 API</p>
+</li>
+<li>
+<p>Cloud Logging API</p>
+</li>
+<li>
+<p>Cloud Resource Manager API</p>
+</li>
+<li>
+<p>Compute Engine API</p>
+</li>
+<li>
+<p>Identity and Access Management (IAM) API</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p><a id="subscribe"></a>On the Canvas page, click <strong>Add Working Environment</strong> and follow the prompts.</p>
+</li>
+<li>
+<p><strong>Choose a Location</strong>: Select <strong>Google Cloud</strong> and <strong>Cloud Volumes ONTAP</strong>.</p>
+</li>
+<li>
+<p>If you&#8217;re prompted, <a href="task_creating_connectors_gcp.html">create a Connector</a>.</p>
+</li>
+<li>
+<p><strong>Details &amp; Credentials</strong>: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.</p>
+<div class="paragraph">
+<p>The following table describes fields for which you might need guidance:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Environment Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Account Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you plan to use <a href="concept_data_tiering.html">data tiering</a> or <a href="concept_backup_to_cloud.html">Cloud Backup</a> with Cloud Volumes ONTAP, then you need to enable <strong>Service Account</strong> and select a service account that has the predefined Storage Admin role. <a href="task_creating_gcp_service_account.html">Learn how to create a service account</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add Labels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.<br>
+<br>
+You can add up to four labels from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four labels when creating a working environment.<br>
+<br>
+For information about labels, refer to <a href="https://cloud.google.com/compute/docs/labeling-resources" target="_blank" rel="noopener">Google Cloud Documentation: Labeling Resources</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name and password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit Project</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.</p>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t see any additional projects in the drop-down list, then you haven&#8217;t yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You&#8217;ll need to repeat this step for each project.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is the service account that you set up for Cloud Manager, <a href="task_creating_gcp_service_account.html">as described on this page</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Click <strong>Add Subscription</strong> to associate the selected credentials with a subscription.</p>
+</div>
+<div class="paragraph">
+<p>To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP project that&#8217;s associated with a subscription to Cloud Volumes ONTAP from the GCP Marketplace.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:</p>
+</div>
+<div class="paragraph">
+<p>+<br>
+video::video_subscribing_gcp.mp4[width=848, height=480]</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Services</strong>: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.</p>
+</li>
+<li>
+<p><strong>Location &amp; Connectivity</strong>: Select a location, choose a firewall policy, and select the checkbox to confirm network connectivity to Google Cloud storage for data tiering.</p>
+<div class="paragraph">
+<p>If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">Google Cloud Documentation: Configuring Private Google Access</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Charging Methods and NSS Account</strong>: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.</p>
+<div class="paragraph">
+<p><a href="concept_licensing.html">Learn about these charging methods</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Preconfigured Packages</strong>: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click <strong>Create my own configuration</strong>.</p>
+<div class="paragraph">
+<p>If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.</p>
+</div>
+</li>
+<li>
+<p><strong>Licensing</strong>: Change the Cloud Volumes ONTAP version as needed, select a license, and select a virtual machine type.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cvo_licensing_gcp.gif" alt="A screenshot of the Licensing page. It shows the Cloud Volumes ONTAP version" width="license (either Explore" height="Standard"></span></p>
+</div>
+<div class="paragraph">
+<p>If your needs change after you launch the system, you can modify the license or virtual machine type later.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Underlying Storage Resources</strong>: Choose settings for the initial aggregate: a disk type and the size for each disk.</p>
+<div class="paragraph">
+<p>The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.</p>
+</div>
+<div class="paragraph">
+<p>The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.</p>
+</div>
+<div class="paragraph">
+<p>For help choosing a disk type and size, see <a href="task_planning_your_config_gcp.html#sizing-your-system-in-gcp">Sizing your system in GCP</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Write Speed &amp; WORM</strong>: Choose <strong>Normal</strong> or <strong>High</strong> write speed, and activate write once, read many (WORM) storage, if desired.</p>
+<div class="paragraph">
+<p>Choosing a write speed is supported with single node systems only.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept_write_speed.html">Learn more about write speed</a>.</p>
+</div>
+<div class="paragraph">
+<p>WORM can&#8217;t be enabled if Cloud Backup was enabled or if data tiering was enabled.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept_worm.html">Learn more about WORM storage</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Data Tiering in Google Cloud Platform</strong>: Choose whether to enable data tiering on the initial aggregate, choose a storage class for the tiered data, and then either select a service account that has the predefined Storage Admin role (required for Cloud Volumes ONTAP 9.7 or later), or select a GCP account (required for Cloud Volumes ONTAP 9.6).</p>
+<div class="paragraph">
+<p>Note the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can&#8217;t select it from Cloud Manager.</p>
+</li>
+<li>
+<p>For help with adding a GCP account, see <a href="task_adding_gcp_accounts.html">Setting up and adding GCP accounts for data tiering with 9.6</a>.</p>
+</li>
+<li>
+<p>You can choose a specific volume tiering policy when you create or edit a volume.</p>
+</li>
+<li>
+<p>If you disable data tiering, you can enable it on subsequent aggregates, but you&#8217;ll need to turn off the system and add a service account from the GCP console.</p>
+<div class="paragraph">
+<p><a href="concept_data_tiering.html">Learn more about data tiering</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Create Volume</strong>: Enter details for the new volume or click <strong>Skip</strong>.</p>
+<div class="paragraph">
+<p>Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access control (for NFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permissions and Users / Groups (for CIFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user&#8217;s domain using the format domain\username.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Advanced options (for NFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an NFS version for the volume: either NFSv3 or NFSv4.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initiator group and IQN (for iSCSI only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.<br>
+<br>
+Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.<br>
+<br>
+iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).<br>
+<br>
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task_provisioning_storage.html#connecting-a-lun-to-a-host">use the IQN to connect to the LUN from your hosts</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following image shows the Volume page filled out for the CIFS protocol:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cot_vol.gif" alt="Screen shot: Shows the Volume page filled out for a Cloud Volumes ONTAP instance."></span></p>
+</div>
+</li>
+<li>
+<p><strong>CIFS Setup</strong>: If you chose the CIFS protocol, set up a CIFS server.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Primary and Secondary IP Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The IP addresses of the DNS servers that provide name resolution for the CIFS server.<br>
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory Domain to join</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credentials authorized to join the domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CIFS server NetBIOS name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A CIFS server name that is unique in the AD domain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organizational Unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NTP Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="api.html" target="_blank" rel="noopener">Cloud Manager API Developer Guide</a> for details.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Usage Profile, Disk Type, and Tiering Policy</strong>: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.</p>
+<div class="paragraph">
+<p>For more information, see <a href="task_planning_your_config_gcp.html#choosing-a-volume-usage-profile">Understanding volume usage profiles</a> and <a href="concept_data_tiering.html">Data tiering overview</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Review &amp; Approve</strong>: Review and confirm your selections.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Review details about the configuration.</p>
+</li>
+<li>
+<p>Click <strong>More information</strong> to review details about support and the GCP resources that Cloud Manager will purchase.</p>
+</li>
+<li>
+<p>Select the <strong>I understand&#8230;&#8203;</strong> check boxes.</p>
+</li>
+<li>
+<p>Click <strong>Go</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.</p>
+</div>
+<div class="paragraph">
+<p>If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the working environment and click <strong>Re-create environment</strong>.</p>
+</div>
+<div class="paragraph">
+<p>For additional help, go to <a href="https://mysupport.netapp.com/GPS/ECMLS2588181.html" target="_blank" rel="noopener">NetApp Cloud Volumes ONTAP Support</a>.</p>
+</div>
+<div class="ulist">
+<div class="title">After you finish</div>
+<ul>
+<li>
+<p>If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.</p>
+</li>
+<li>
+<p>If you want to apply quotas to volumes, use System Manager or the CLI.</p>
+<div class="paragraph">
+<p>Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="launching-an-ha-pair-in-gcp">Launching an HA pair in GCP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.</p>
+</div>
+<div class="ulist">
+<div class="title">What you&#8217;ll need</div>
+<ul>
+<li>
+<p>You should have a <a href="task_creating_connectors_aws.html">Connector that is associated with your workspace</a>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The service account associated with the Connector <a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.0_GCP.yaml" target="_blank" rel="noopener">should have the latest permissions</a>.</p>
+</li>
+<li>
+<p><a href="concept_connectors.html">You should be prepared to leave the Connector running at all times</a>.</p>
+</li>
+<li>
+<p>You should have chosen a configuration and obtained GCP networking information from your administrator. For details, see <a href="task_planning_your_config_gcp.html">Planning your Cloud Volumes ONTAP configuration</a>.</p>
+</li>
+<li>
+<p>To deploy a BYOL system, you need the 20-digit serial number (license key) for each node.</p>
+</li>
+<li>
+<p>The following Google Cloud APIs should be <a href="https://cloud.google.com/apis/docs/getting-started#enabling_apis" target="_blank" rel="noopener">enabled in your project</a>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Deployment Manager V2 API</p>
+</li>
+<li>
+<p>Cloud Logging API</p>
+</li>
+<li>
+<p>Cloud Resource Manager API</p>
+</li>
+<li>
+<p>Compute Engine API</p>
+</li>
+<li>
+<p>Identity and Access Management (IAM) API</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>On the Canvas page, click <strong>Add Working Environment</strong> and follow the prompts.</p>
+</li>
+<li>
+<p><strong>Choose a Location</strong>: Select <strong>Google Cloud</strong> and <strong>Cloud Volumes ONTAP HA</strong>.</p>
+</li>
+<li>
+<p><strong>Details &amp; Credentials</strong>: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.</p>
+<div class="paragraph">
+<p>The following table describes fields for which you might need guidance:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Environment Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Account Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you plan to use the <a href="concept_data_tiering.html">Tiering</a> or <a href="concept_backup_to_cloud.html">Cloud Backup</a> services, you need to enable the <strong>Service Account</strong> switch and then select the Service Account that has the predefined Storage Admin role.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add Labels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.<br>
+<br>
+You can add up to four labels from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four labels when creating a working environment.<br>
+<br>
+For information about labels, refer to <a href="https://cloud.google.com/compute/docs/labeling-resources" target="_blank" rel="noopener">Google Cloud Documentation: Labeling Resources</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name and password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit Project</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.</p>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t see any additional projects in the drop-down list, then you haven&#8217;t yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You&#8217;ll need to repeat this step for each project.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is the service account that you set up for Cloud Manager, <a href="task_getting_started_gcp.html#service-account">as described in step 4b on this page</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Click <strong>Add Subscription</strong> to associate the selected credentials with a subscription.</p>
+</div>
+<div class="paragraph">
+<p>To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP project that&#8217;s associated with a subscription to Cloud Volumes ONTAP from the GCP Marketplace.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div id="subscribe" class="paragraph">
+<p>The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video_subscribing_gcp.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Services</strong>: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.</p>
+</li>
+<li>
+<p><strong>HA Deployment Models</strong>: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zones.</p>
+<div class="paragraph">
+<p><a href="concept_ha_google_cloud.html">Learn more about HA deployment models</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Connectivity</strong>: Select four different VPCs for the HA configuration, a subnet in each VPC, and then choose a firewall policy.</p>
+<div class="paragraph">
+<p><a href="reference_networking_gcp.html">Learn more about networking requirements</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Charging Methods and NSS Account</strong>: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.</p>
+<div class="paragraph">
+<p><a href="concept_licensing.html">Learn about these charging methods</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Preconfigured Packages</strong>: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click <strong>Create my own configuration</strong>.</p>
+<div class="paragraph">
+<p>If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.</p>
+</div>
+</li>
+<li>
+<p><strong>Licensing</strong>: Change the Cloud Volumes ONTAP version as needed, select a license, and select a virtual machine type.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cvo_licensing_gcp.gif" alt="A screenshot of the Licensing page. It shows the Cloud Volumes ONTAP version" width="license (either Explore" height="Standard"></span></p>
+</div>
+<div class="paragraph">
+<p>If your needs change after you launch the system, you can modify the license or virtual machine type later.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.8 RC1 and 9.8 GA is available. The update does not occur from one release to another—for example, from 9.7 to 9.8.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Underlying Storage Resources</strong>: Choose settings for the initial aggregate: a disk type and the size for each disk.</p>
+<div class="paragraph">
+<p>The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.</p>
+</div>
+<div class="paragraph">
+<p>The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.</p>
+</div>
+<div class="paragraph">
+<p>For help choosing a disk type and size, see <a href="task_planning_your_config_gcp.html#sizing-your-system-in-gcp">Sizing your system in GCP</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>WORM</strong>: Activate write once, read many (WORM) storage, if desired.</p>
+<div class="paragraph">
+<p>WORM can&#8217;t be enabled if data tiering was enabled. <a href="concept_worm.html">Learn more about WORM storage</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Data Tiering in Google Cloud Platform</strong>: Choose whether to enable data tiering on the initial aggregate, choose a storage class for the tiered data, and then select a service account that has the predefined Storage Admin role.</p>
+<div class="paragraph">
+<p>Note the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can&#8217;t select it from Cloud Manager.</p>
+</li>
+<li>
+<p>You can choose a specific volume tiering policy when you create or edit a volume.</p>
+</li>
+<li>
+<p>If you disable data tiering, you can enable it on subsequent aggregates, but you&#8217;ll need to turn off the system and add a service account from the GCP console.</p>
+<div class="paragraph">
+<p><a href="concept_data_tiering.html">Learn more about data tiering</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Create Volume</strong>: Enter details for the new volume or click <strong>Skip</strong>.</p>
+<div class="paragraph">
+<p>Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access control (for NFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permissions and Users / Groups (for CIFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user&#8217;s domain using the format domain\username.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Advanced options (for NFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an NFS version for the volume: either NFSv3 or NFSv4.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initiator group and IQN (for iSCSI only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.<br>
+<br>
+Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.<br>
+<br>
+iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).<br>
+<br>
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task_provisioning_storage.html#connecting-a-lun-to-a-host">use the IQN to connect to the LUN from your hosts</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following image shows the Volume page filled out for the CIFS protocol:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cot_vol.gif" alt="Screen shot: Shows the Volume page filled out for a Cloud Volumes ONTAP instance."></span></p>
+</div>
+</li>
+<li>
+<p><strong>CIFS Setup</strong>: If you chose the CIFS protocol, set up a CIFS server.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Primary and Secondary IP Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The IP addresses of the DNS servers that provide name resolution for the CIFS server.<br>
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory Domain to join</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credentials authorized to join the domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CIFS server NetBIOS name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A CIFS server name that is unique in the AD domain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organizational Unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NTP Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="api.html" target="_blank" rel="noopener">Cloud Manager API Developer Guide</a> for details.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Usage Profile, Disk Type, and Tiering Policy</strong>: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.</p>
+<div class="paragraph">
+<p>For more information, see <a href="task_planning_your_config_gcp.html#choosing-a-volume-usage-profile">Understanding volume usage profiles</a> and <a href="concept_data_tiering.html">Data tiering overview</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Review &amp; Approve</strong>: Review and confirm your selections.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Review details about the configuration.</p>
+</li>
+<li>
+<p>Click <strong>More information</strong> to review details about support and the GCP resources that Cloud Manager will purchase.</p>
+</li>
+<li>
+<p>Select the <strong>I understand&#8230;&#8203;</strong> check boxes.</p>
+</li>
+<li>
+<p>Click <strong>Go</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.</p>
+</div>
+<div class="paragraph">
+<p>If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the working environment and click <strong>Re-create environment</strong>.</p>
+</div>
+<div class="paragraph">
+<p>For additional help, go to <a href="https://mysupport.netapp.com/GPS/ECMLS2588181.html" target="_blank" rel="noopener">NetApp Cloud Volumes ONTAP Support</a>.</p>
+</div>
+<div class="ulist">
+<div class="title">After you finish</div>
+<ul>
+<li>
+<p>If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.</p>
+</li>
+<li>
+<p>If you want to apply quotas to volumes, use System Manager or the CLI.</p>
+<div class="paragraph">
+<p>Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div class="page-nav-contribute"  >
+      <div class="page-nav-contribute-title">CONTRIBUTE</div>
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/blob/main/task_deploying_gcp.adoc" class="btn btn-default githubEditButton" role="button"><img src="/us-en/occm/images/github.png" class="github-icon" />Edit on GitHub</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/occm/issues/new?body=Page%3A%20[Launching Cloud Volumes ONTAP in GCP](https://docs.netapp.com/us-en/occm/task_deploying_gcp.html)" class="btn btn-default githubEditButton" role="button"><img src="/us-en/occm/images/github.png" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Contributor's Guide</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2021 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/occm/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
+  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/us-en/occm/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/us-en/occm/js/prism.js'></script>
+      <script type="text/javascript" src='/us-en/occm/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/us-en/occm/js/www-ntap.js'></script>
+    <script src='/us-en/occm/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>

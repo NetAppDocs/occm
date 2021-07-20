@@ -1,0 +1,22 @@
+{
+    "properties": {
+        "roleName": "SnapCenter_Deployment_Role_2",
+        "description": "Role for SnapCenter Cluster deployment to be assigned at the scope of virtual network or higher",
+        "assignableScopes": [
+            "/subscriptions/<Subscription_ID>"
+        ],
+        "permissions": [
+            {
+                "actions": [
+					"Microsoft.Authorization/roleDefinitions/write",
+					"Microsoft.Authorization/roleDefinitions/delete",
+					"Microsoft.Authorization/roleAssignments/write",
+					"Microsoft.Authorization/roleAssignments/delete"
+                ],
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}

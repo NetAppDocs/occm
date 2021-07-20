@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "cloudformation:SignalResource",
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:AbortMultipartUpload",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation",
+                "s3:GetBucketTagging",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "kms:GenerateDataKey",
+                "kms:Decrypt"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        }
+    ]
+}
